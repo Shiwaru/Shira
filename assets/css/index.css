@@ -4,12 +4,9 @@
   --accent-blue: #3498db;
   --text-main: #ffffff;
   --text-dim: #b3b3b3;
-  font-family: 'Inter', system-ui, sans-serif;
-  line-height: 1.5;
 }
 
 body {
-  min-height: 100vh;
   margin: 0;
   padding: 0;
   background-color: var(--bg-dark);
