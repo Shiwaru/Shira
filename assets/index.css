@@ -57,7 +57,7 @@ body {
 .hero {
   flex: 1;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   text-align: center;
   width: 100%; /* Importante para centrar */
@@ -84,7 +84,12 @@ body {
   font-size: 1.2rem;
   color: var(--text-dim);
   max-width: 700px;
-  margin: 1rem auto 2.5rem;
+}
+
+.pVersion {
+  color: var(--accent-blue);
+  text-shadow: 2px 2px 4px;
+  font-size: 30px;
 }
 
 .button-group {
