@@ -32,6 +32,28 @@ body {
   margin: 0 auto;
 }
 
+.logo {
+  border-radius: 30%;
+  border-width: 1px;
+  border-right: 5px solid #000000;
+  border-bottom: 5px solid #000000;
+  transition: all 0.5s;
+  opacity: 1;
+}
+
+.logo:hover {
+  border-radius: 30%;
+  border-right: 5px solid #edb8f4;
+  border-bottom: 5px solid #edb8f4;
+  transition: all 0.5s;
+  opacity: 1;
+}
+
+.btnProfile {
+  background: transparent;
+  border: none;
+}
+
 .hero {
   flex: 1;
   display: flex;
