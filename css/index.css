@@ -149,9 +149,31 @@ body {
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(142, 68, 173, 0.6);
+  box-shadow: 0 8px 20px rgba(142, 68, 173, 0.6);
   filter: brightness(1.1);
+} 
+
+.btn-primary-1 {
+  padding: 1rem 2.5rem;
+  /* El degradado violeta a azul */
+  background: linear-gradient(45deg, var(--bg-dark), var(--accent-violet)) !important;
+  border: none;
+  border-radius: 50px; /* Esto lo hace redondeado */
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 15px rgba(54, 23, 68, 0.4);
+  display: inline-block;
+  outline: none;
 }
+
+.btn-primary-1:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(71, 71, 71, 0.6);
+  filter: brightness(1.1);
+} 
 
 .links {
   display: flex;
