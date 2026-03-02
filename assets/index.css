@@ -6,6 +6,12 @@
   --text-dim: #b3b3b3;
 }
 
+@media {
+  body {
+    max-width: 400px;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
