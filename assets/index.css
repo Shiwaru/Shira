@@ -209,4 +209,7 @@ body {
   body {
     max-width: 15%;
   }
+  
+  .main-container {
+    max-width: 50px;
 }
