@@ -26,6 +26,7 @@
     background: var(--bg-void);
     font-family: 'DM Sans', sans-serif;
     height: 100vh;
+    width: 100%;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -90,6 +91,13 @@
 
   /* Title */
   .title-block { text-align: center; position: relative; }
+
+  .first-badge {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0px;
+    margin-top: -25px;
+  }
 
   .shira-badge {
     display: inline-flex; align-items: center; gap: 6px;
@@ -264,6 +272,143 @@
   .bottom-name { font-size: 12px; color: var(--text-secondary); font-family: 'Syne', sans-serif; font-weight: 600; }
   .bottom-name span { color: var(--text-primary); }
   .bottom-right { font-size: 11px; color: var(--text-dim); }
+
+  @media (min-width: 600px) and (max-width: 1000px) {
+      .menu-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        width: 1000px;
+        height: 40px;
+      }
+
+      .menu-wrap {
+        gap: 12px;
+      }
+
+      .menu-buttons button {
+        padding: 5px 10px;
+      }
+
+      .btn-label {
+        font-size: 12px;
+      }
+
+      .status-text { 
+        font-size: 10px; 
+        color: var(--text-secondary); 
+        flex: 1; }
+
+      .status-bar {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 16px;
+        padding: 5px 20px;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        width: 340px;
+      }
+        
+      .game-title {
+        font-family: 'Syne', sans-serif;
+        font-size: clamp(40px, 2vw, 88px);
+        font-weight: 800; line-height: 1; letter-spacing: -3px;
+        background: linear-gradient(135deg, #fff 0%, var(--accent-violet) 50%, var(--accent-blue) 100%);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 0 30px rgba(155,77,202,0.3));
+        position: relative;
+      }
+
+
+      /* .recuerden {
+        display: none;
+      } */
+  }
+
+  @media (min-width: 1000px) and (max-width: 1300px) {
+      .menu-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        width: 1000px;
+        height: 40px;
+      }
+
+      .menu-buttons button {
+        padding: 10px 15px;
+      }
+      
+      .game-title {
+        font-family: 'Syne', sans-serif;
+        font-size: clamp(52px, 2vw, 88px);
+        font-weight: 800; line-height: 1; letter-spacing: -3px;
+        background: linear-gradient(135deg, #fff 0%, var(--accent-violet) 50%, var(--accent-blue) 100%);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 0 30px rgba(155,77,202,0.3));
+        position: relative;
+      }
+
+      /* .recuerden {
+        display: none;
+      } */
+  }
+
+  @media (min-width: 1300px) and (max-width: 1400px) {
+      .menu-buttons {
+        display: flex;
+        max-width: 280px;
+      }
+
+      .menu-buttons button {
+        padding: 10px 15px;
+      }
+      
+      .game-title {
+        font-family: 'Syne', sans-serif;
+        font-size: clamp(52px, 2vw, 88px);
+        font-weight: 800; line-height: 1; letter-spacing: -3px;
+        background: linear-gradient(135deg, #fff 0%, var(--accent-violet) 50%, var(--accent-blue) 100%);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 0 30px rgba(155,77,202,0.3));
+        position: relative;
+      }
+
+      /* .recuerden {
+        display: none;
+      } */
+  }
+
+  @media (min-width: 1400px) and (max-width: 1500px) {
+      .menu-buttons {
+        display: flex;
+        max-width: 280px;
+      }
+
+      .menu-buttons button {
+        padding: 10px 15px;
+      }
+      
+      .game-title {
+        font-family: 'Syne', sans-serif;
+        font-size: clamp(52px, 1vw, 88px);
+        font-weight: 800; line-height: 1; letter-spacing: -3px;
+        background: linear-gradient(135deg, #fff 0%, var(--accent-violet) 50%, var(--accent-blue) 100%);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 0 30px rgba(155,77,202,0.3));
+        position: relative;
+      }
+
+      /* .recuerden {
+        display: none;
+      } */
+  }
+
 </style>
 </head>
 <body>
@@ -279,7 +424,7 @@
 <div class="menu-wrap">
 
   <div class="title-block">
-    <div style="display:flex;justify-content:center;margin-bottom:16px;">
+    <div class="first-badge">
       <div class="shira-badge">
         <div class="shira-badge-dot"></div>
         EN DESARROLLO · Alpha
@@ -330,10 +475,6 @@
       </div>
       <span class="btn-arrow">→</span>
     </button>
-
-    <br>
-    <span class="btn-icon btn-text btn-label" style="align-self: center; justify-self: center;">Recuerden que fumar hacer mal.</span>
-    
     <!-- <div class="btn-row">
       <button class="shira-btn">
         <span class="btn-icon">⚙</span>
@@ -345,6 +486,8 @@
       </button>
     </div> -->
   </div>
+  
+  <span class="btn-icon btn-text btn-label recuerden" style="align-self: center; justify-self: center;"></span>
 
   <div class="external-status-bar">
     <div class="status-bar">
@@ -370,7 +513,7 @@
     <div class="bottom-logo">S</div>
     <div class="bottom-name"><span>Shira</span> Launcher</div>
   </div>
-  <div class="bottom-right">© Shira Labs · Shira Highlight v0.1.3</div>
+  <div class="bottom-right">© Shira Labs · Shira Highlight</div>
 </div>
 
 <script>
@@ -393,5 +536,41 @@
     particlesEl.appendChild(p);
   }
 </script>
+
+<script>
+  const item = document.querySelector(".recuerden");
+  const list = [
+    "Recuerden que fumar hace mal",
+    "Te gusta mi proyecto? Próximamente tendré Discord!",
+    "Muchas cosas buenas nos esperan :D",
+    "Y si te digo que soy un espía del FBI?",
+    "*se ríe como desquiciado mental*",
+    `Conoces a <a href="https://juansekill.com">Juansekill</a>?`,
+    `Haz escuchado de <a href="https://optijuegos.net/">OptiJuegos</a>?`,
+    "ShiraMAX será la cúspide de toda optimización!",
+    "Te gusta Minecraft Java?? A mi tambieen!!",
+    "gg ez bro",
+    "No te dejes engañar! TLauncher es peor de lo que parece",
+    "Bro realmente piensa que puede jugar con su lavarropas",
+    "Aquí a futuro irán factos sobre el launcher - ¿Tendré suerte?",
+    "Como llegué aquí?",
+    "Díganle a Shiwaru que me saque de su sótano - quiero comer de una vez",
+    "Díganle a Juansekill que se quedó sin su galleta",
+    "Me gusta descargar Minecraft, y Java, y Forge, y Fabric, y Forge, y NeoForge, y Mods, y...",
+    "A veces solo le hablo a la pared, nunca me contesta",
+    "Qué me miras? *se sonroja*",
+    "Nya, ichi ni san, Nya arigatoooo"
+  ];
+
+  const randomNumber = getRandomArbitrary(0,list.length-1);
+  const finalNumber = Math.round(randomNumber);
+
+  item.innerHTML = list[finalNumber];
+
+  function getRandomArbitrary(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+</script>
+
 </body>
 </html>
