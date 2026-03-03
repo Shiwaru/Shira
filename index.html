@@ -1,41 +1,397 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <link rel="stylesheet" href="assets/index.css">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shira Launcher</title>
-    <link rel="icon" href="img/logo.png" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minecraft - Shira Edition</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg-void: #07070d;
+    --accent-violet: #9b4dca;
+    --accent-blue: #3d8ef0;
+    --accent-cyan: #00d4ff;
+    --accent-pink: #e040fb;
+    --text-primary: #f0f0f8;
+    --text-secondary: #8888aa;
+    --text-dim: #444466;
+    --border: rgba(255,255,255,0.06);
+    --border-accent: rgba(155,77,202,0.3);
+  }
+
+  body {
+    background: var(--bg-void);
+    font-family: 'DM Sans', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* AMBIENT */
+  .ambient { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+  .orb {
+    position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.5;
+  }
+  .orb-1 {
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(155,77,202,0.25) 0%, transparent 70%);
+    top: -200px; left: -150px;
+    animation: drift1 12s ease-in-out infinite alternate;
+  }
+  .orb-2 {
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(61,142,240,0.18) 0%, transparent 70%);
+    bottom: -100px; right: 100px;
+    animation: drift2 15s ease-in-out infinite alternate;
+  }
+  .orb-3 {
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(0,212,255,0.12) 0%, transparent 70%);
+    top: 40%; right: -50px;
+    animation: drift3 10s ease-in-out infinite alternate;
+  }
+  @keyframes drift1 { from { transform: translate(0,0); } to { transform: translate(40px,25px); } }
+  @keyframes drift2 { from { transform: translate(0,0); } to { transform: translate(-30px,-20px); } }
+  @keyframes drift3 { from { transform: translate(0,0); } to { transform: translate(-20px,35px); } }
+
+  /* Grid pattern */
+  .grid-bg {
+    position: fixed; inset: 0; z-index: 0; opacity: 0.03;
+    background-image: linear-gradient(rgba(155,77,202,1) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(155,77,202,1) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Floating particles */
+  .particle {
+    position: fixed; border-radius: 50%;
+    animation: float-particle var(--d) ease-in-out infinite;
+    animation-delay: var(--delay);
+    opacity: 0;
+  }
+  @keyframes float-particle {
+    0% { opacity: 0; transform: translateY(100vh) translateX(0); }
+    10% { opacity: var(--op); }
+    90% { opacity: var(--op); }
+    100% { opacity: 0; transform: translateY(-100px) translateX(var(--drift)); }
+  }
+
+  /* MENU */
+  .menu-wrap {
+    position: relative; z-index: 10;
+    display: flex; flex-direction: column; align-items: center;
+    gap: 32px;
+  }
+
+  /* Title */
+  .title-block { text-align: center; position: relative; }
+
+  .shira-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 4px 14px;
+    background: rgba(155,77,202,0.12);
+    border: 1px solid var(--border-accent);
+    border-radius: 20px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+    color: var(--accent-violet); text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .shira-badge-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent-violet);
+    box-shadow: 0 0 6px var(--accent-violet);
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+  @keyframes pulse-dot { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
+
+  .game-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(52px, 9vw, 88px);
+    font-weight: 800; line-height: 1; letter-spacing: -3px;
+    background: linear-gradient(135deg, #fff 0%, var(--accent-violet) 50%, var(--accent-blue) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 30px rgba(155,77,202,0.3));
+    position: relative;
+  }
+
+  .game-subtitle {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--text-secondary); margin-top: 8px;
+  }
+
+  .version-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 5px 16px; margin-top: 12px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-size: 12px; color: var(--text-secondary);
+  }
+  .version-pill span { color: var(--accent-cyan); font-weight: 600; }
+
+  /* Buttons */
+  .menu-buttons {
+    display: flex; flex-direction: column; gap: 8px; width: 340px;
+  }
+
+  .shira-btn {
+    position: relative; padding: 13px 24px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text-primary);
+    font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500;
+    cursor: pointer; transition: all 0.25s; text-align: left;
+    display: flex; align-items: center; gap: 12px;
+    overflow: hidden;
+  }
+
+  .shira-btn::before {
+    content: ''; position: absolute;
+    left: 0; top: 0; bottom: 0; width: 3px;
+    background: linear-gradient(to bottom, var(--accent-violet), var(--accent-blue));
+    opacity: 0; transition: opacity 0.25s;
+  }
+
+  .shira-btn::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(155,77,202,0.08), transparent);
+    opacity: 0; transition: opacity 0.25s;
+  }
+
+  .shira-btn:hover {
+    border-color: var(--border-accent);
+    transform: translateX(4px);
+    box-shadow: 0 4px 24px rgba(155,77,202,0.15), -4px 0 0 var(--accent-violet);
+  }
+  .shira-btn:hover::before { opacity: 1; }
+  .shira-btn:hover::after { opacity: 1; }
+  .shira-btn:hover .btn-arrow { opacity: 1; transform: translateX(0); }
+
+  .shira-btn:active { transform: translateX(2px); }
+
+  .btn-icon { font-size: 18px; flex-shrink: 0; }
+  .btn-text { flex: 1; }
+  .btn-label { font-size: 14px; font-weight: 500; color: var(--text-primary); }
+  .btn-sub { font-size: 11px; color: var(--text-secondary); margin-top: 1px; }
+  .btn-arrow {
+    font-size: 14px; color: var(--accent-violet);
+    opacity: 0; transform: translateX(-6px); transition: all 0.25s;
+  }
+
+  .btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+
+  .shira-btn-primary {
+    background: linear-gradient(135deg, var(--accent-violet), var(--accent-blue));
+    border-color: transparent;
+    box-shadow: 0 4px 20px rgba(155,77,202,0.3);
+  }
+  .shira-btn-primary:hover {
+    transform: translateY(-2px) translateX(0);
+    box-shadow: 0 8px 30px rgba(155,77,202,0.45);
+    border-color: transparent;
+  }
+  .shira-btn-primary::before { display: none; }
+
+  .shira-btn-danger {
+    border-color: rgba(255,95,87,0.15);
+  }
+  .shira-btn-danger:hover {
+    border-color: rgba(255,95,87,0.3);
+    box-shadow: 0 4px 20px rgba(255,95,87,0.1), -4px 0 0 #ff5f57;
+    transform: translateX(4px);
+  }
+  .shira-btn-danger::before {
+    background: #ff5f57;
+  }
+
+  /* Status bar */
+
+  .external-status-bar {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .status-bar {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 16px;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    width: 340px;
+  }
+
+  .status-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #28c840; box-shadow: 0 0 8px rgba(40,200,64,0.6);
+    animation: pulse-dot 2s ease-in-out infinite; flex-shrink: 0;
+  }
+  .status-text { font-size: 12px; color: var(--text-secondary); flex: 1; }
+  .status-text span { color: var(--text-primary); font-weight: 500; }
+  .status-badge {
+    padding: 2px 8px;
+    background: rgba(155,77,202,0.12);
+    border: 1px solid var(--border-accent);
+    border-radius: 10px;
+    font-size: 10px; font-weight: 600; color: var(--accent-violet);
+  }
+
+  /* Bottom */
+  .bottom-bar {
+    position: fixed; bottom: 0; width: 100%;
+    padding: 12px 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    z-index: 10;
+    border-top: 1px solid var(--border);
+    background: rgba(7,7,13,0.8); backdrop-filter: blur(10px);
+  }
+  .bottom-left { display: flex; align-items: center; gap: 8px; }
+  .bottom-logo {
+    width: 20px; height: 20px; border-radius: 5px;
+    background: linear-gradient(135deg, var(--accent-violet), var(--accent-blue));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; font-weight: 800; font-family: 'Syne', sans-serif;
+  }
+  .bottom-name { font-size: 12px; color: var(--text-secondary); font-family: 'Syne', sans-serif; font-weight: 600; }
+  .bottom-name span { color: var(--text-primary); }
+  .bottom-right { font-size: 11px; color: var(--text-dim); }
+</style>
 </head>
 <body>
-  <div class="main-container">
-    <nav class="navbar">
-      <button class="btnProfile" onclick="window.open('https://github.com/Shiwaru/', '_blank')">
-      <div class="logo"><img src="img/logo.png" alt="" style="height: 50px; border-radius: 30%;"></div></button>
-      <div class="links">
-        <a href="https://github.com/Shiwaru/Shira-Highlight/releases/">Novedades</a>
-        <a href="https://github.com/Shiwaru/Shira-Highlight">GitHub</a>
-      </div>
-    </nav>
 
-    <header class="hero">
-      <div class="hero-content">
-        <h1 class="title">Shira Launcher</h1>
-        <p class="subtitle">Una experiencia de Minecraft Java optimizada, equilibrada, rápida, elegante y libre.
-          Versiones soportadas: </p><p class="pVersion">[1.21.11] - [1.8]</p>
-        <p>Trabajando en: Integración de Skins</p>
-        <div class="button-group">
-          <button onclick="window.open('https://github.com/Shiwaru/Shira-Highlight/releases/download/v0.1.3/Shira.Highlight.v0.1.3.rar', '_blank')" class="btn-primary">Descargar Ahora</button>
-          <button onclick="window.open('https://github.com/Shiwaru/Shira-Highlight/releases/', '_blank')" class="btn-primary-1">GitHub</button>
-          <button onclick="window.open('https://www.virustotal.com/gui/file/d0e0094f2f0491a131bed7b9709dd54e5ff4bbba44d2dc3e235bd12a8557c5b3', '_blank')" class="btn-virustotal">VirusTotal</button>
-        </div>
-        <br>
-          <button onclick="window.open('https://www.curseforge.com/minecraft/mc-mods/skinsrich', '_blank')" class="btn-secondary">SkinsRich Mod</button>
-        <p class="subtitle">Alpha v0.1.3</p>
-      </div>
-    </header>
+<div class="ambient">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+</div>
+<div class="grid-bg"></div>
+<div id="particles"></div>
 
-    <div class="shaii-bg-effect"></div>
+<div class="menu-wrap">
+
+  <div class="title-block">
+    <div style="display:flex;justify-content:center;margin-bottom:16px;">
+      <div class="shira-badge">
+        <div class="shira-badge-dot"></div>
+        EN DESARROLLO · Alpha
+      </div>
+    </div>
+    <div class="game-title">SHIRA LAUNCHER</div>
+    <div class="game-subtitle">Java Edition - HIGHLIGHT</div>
+    <div style="display:flex;justify-content:center;">
+      <div class="version-pill">
+        Versión<span>v0.1.3</span>
+      </div>
+    </div>
   </div>
+
+  <div class="menu-buttons">
+    <button onclick="window.open('https://github.com/Shiwaru/Shira-Highlight');" class="shira-btn">
+      <span class="btn-icon"><i class="fab fa-github"></i></span>
+      <div class="btn-text">
+        <div class="btn-label">GitHub</div>
+        <div class="btn-sub">Visita mi github</div>
+      </div>
+      <span class="btn-arrow">→</span>
+    </button>
+
+    <button onclick="window.open('https://github.com/Shiwaru/Shira-Highlight/releases');" class="shira-btn">
+      <span class="btn-icon"><i class="fas fa-arrow-alt-circle-down"></i></span>
+      <div class="btn-text">
+        <div class="btn-label">Descargar</div>
+        <div class="btn-sub">Shira Launcher</div>
+      </div>
+      <span class="btn-arrow">→</span>
+    </button>
+
+    <!-- <button onclick="window.open('https://github.com/Shiwaru/Shira-Highlight/releases');" class="shira-btn">
+      <span class="btn-icon"><i class="fas fa-arrow-alt-circle-down"></i></span>
+      <div class="btn-text">
+        <div class="btn-label">Releases</div>
+        <div class="btn-sub">Descargas de Shira Launcher</div>
+      </div>
+      <span class="btn-arrow">→</span>
+    </button> -->
+
+    <button onclick="window.open('https://www.virustotal.com/gui/file/d0e0094f2f0491a131bed7b9709dd54e5ff4bbba44d2dc3e235bd12a8557c5b3');" class="shira-btn">
+      <span class="btn-icon"><i class="fas fa-search"></i></span>
+      <div class="btn-text">
+        <div class="btn-label">VirusTotal</div>
+        <div class="btn-sub">Verifica la integridad de mis archivos</div>
+      </div>
+      <span class="btn-arrow">→</span>
+    </button>
+
+    <br>
+    <span class="btn-icon btn-text btn-label" style="align-self: center; justify-self: center;">Recuerden que fumar hacer mal.</span>
+    
+    <!-- <div class="btn-row">
+      <button class="shira-btn">
+        <span class="btn-icon">⚙</span>
+        <div class="btn-text"><div class="btn-label">Opciones</div></div>
+      </button>
+      <button class="shira-btn shira-btn-danger">
+        <span class="btn-icon">✕</span>
+        <div class="btn-text"><div class="btn-label">Salir</div></div>
+      </button>
+    </div> -->
+  </div>
+
+  <div class="external-status-bar">
+    <div class="status-bar">
+      <div class="status-dot"></div>
+      <div class="status-text">Intro · <span>Mojang Studios</span> (Vanilla)</div> <!-- · -->
+      <div class="status-badge">En desarrollo</div>
+    </div>
+    <div class="status-bar" style="margin-top: 4px;">
+      <div class="status-dot"></div>
+      <div class="status-text">Revamp Estético · <span>Interfaz</span></div> <!-- · -->
+      <div class="status-badge">En desarrollo</div>
+    </div>
+    <div class="status-bar" style="margin-top: 4px;">
+      <div class="status-dot"></div>
+      <div class="status-text">Optimización Vanilla · <span>ShiraMAX</span></div> <!-- · -->
+      <div class="status-badge">Pausado</div>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-bar">
+  <div class="bottom-left">
+    <div class="bottom-logo">S</div>
+    <div class="bottom-name"><span>Shira</span> Launcher</div>
+  </div>
+  <div class="bottom-right">© Shira Labs · Shira Highlight v0.1.3</div>
+</div>
+
+<script>
+  const particlesEl = document.getElementById('particles');
+  const colors = ['#9b4dca','#3d8ef0','#00d4ff','#e040fb'];
+  for (let i = 0; i < 25; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 4 + 2;
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    p.style.cssText = `
+      width:${size}px;height:${size}px;
+      background:${color};
+      left:${Math.random()*100}%;
+      --d:${Math.random()*8+6}s;
+      --delay:${Math.random()*8}s;
+      --drift:${(Math.random()-0.5)*80}px;
+      --op:${Math.random()*0.4+0.1};
+    `;
+    particlesEl.appendChild(p);
+  }
+</script>
 </body>
 </html>
