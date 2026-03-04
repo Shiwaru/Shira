@@ -273,6 +273,26 @@
   .bottom-name span { color: var(--text-primary); }
   .bottom-right { font-size: 11px; color: var(--text-dim); }
 
+  @media (max-width: 600px) {
+      .game-title {
+        font-family: 'Syne', sans-serif;
+        font-size: clamp(30px, 2vw, 88px);
+        font-weight: 800; line-height: 1; letter-spacing: -3px;
+        background: linear-gradient(135deg, #fff 0%, var(--accent-violet) 50%, var(--accent-blue) 100%);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 0 30px rgba(155,77,202,0.3));
+        position: relative;
+      }
+      
+      .recuerden {
+          font-size: 11px;
+      }
+      
+      .menu-wrap {
+          gap: 5px;
+      }
+  }
+
   @media (min-width: 600px) and (max-width: 1000px) {
       .menu-buttons {
         display: flex;
