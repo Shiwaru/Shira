@@ -557,7 +557,7 @@
 <div class="grid-bg"></div>
 <div id="particles"></div>
 
-<div class="menu-wrap">
+<div class="menu-wrap" style="opacity: 0;">
 
   <div class="title-block">
     <div class="first-badge">
@@ -674,13 +674,12 @@
     let triggerLog = 0;
 
     menu = document.querySelector(".menu-wrap");
-    menu.style.opacity = 0;
     menu.style.transition = "all 0.5s";
 
     setTimeout(intro, 300)
 
     function intro() {
-      menu.style.opacity = 1
+      menu.style.opacity = 1;
     }
   const item = document.querySelector(".recuerden");
   const list = [
