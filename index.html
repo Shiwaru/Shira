@@ -197,11 +197,13 @@
     opacity: 0; transition: opacity 0.25s;
   }
 
-  .shira-btn:hover {
+.shira-btn:hover {
     border-color: var(--border-accent);
     transform: translateX(4px);
-    box-shadow: 0 4px 24px rgba(155,77,202,0.15), -4px 0 0 var(--accent-violet);
-  }
+    box-shadow: 0 4px 24px rgba(155,77,202,0.15),
+                inset 0 0 20px rgba(155,77,202,0.05);
+}
+  
   .shira-btn:hover::before { opacity: 1; }
   .shira-btn:hover::after { opacity: 1; }
   .shira-btn:hover .btn-arrow { opacity: 1; transform: translateX(0); }
@@ -396,6 +398,17 @@
   .exit-button:hover {
     background-color: #a0211a;
     transition: all 0.5s;
+  }
+
+  .card {
+    overflow-y: scroll;
+    max-height: 800px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .card::-webkit-scrollbar {
+    display: none;
   }
 
   @media (max-width: 600px) {
@@ -797,13 +810,14 @@
     if (triggerLog == 0) {
       
       changeLog.style.opacity = 0;
-      changeLog.style.transition = "all 0.5s";
+      changeLog.style.transition = "transform 0.2s, opacity 0.3s";
       menuOverlay.style.transition = "all 0s";
       changeLog.style.opacity = 0;
-      setTimeout(switchMenu, 600);
+      setTimeout(switchMenu, 500);
 
     } else {
       changeLog.style.opacity = 0;
+      changeLog.style.transform = 'scale(1)';
       menuOverlay.style.transition = "all 0.5s";
       menuOverlay.style.opacity = 0;
       setTimeout(switchMenu, 600);
