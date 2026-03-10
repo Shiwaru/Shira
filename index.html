@@ -340,6 +340,7 @@
   }
 
   .main-text {
+    min-width: 700px;
     font-size: 20px;
     font-weight: 600;
     letter-spacing: 0.1em;
@@ -415,6 +416,47 @@
       .menu-wrap {
         gap: 5px;
       }
+
+      .main-text {
+        min-width: 0px;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-dim);
+        transition: all 0.5s;
+        cursor: pointer;
+        padding: 10px;
+        border: 1px solid var(--border);
+        background-color: rgba(255, 255, 255, 0.037);
+        border-radius: 8px;
+        margin-bottom: 5px;
+      }
+
+      .orb {
+        position: absolute; filter: none; opacity: 0; display: none;
+      }
+      .orb-1 {
+        width: 0px; height: 0px;
+        background: none;
+        display: none;
+        bottom: 0;
+        animation: none;
+      }
+      .orb-2 {
+        width: 0px; height: 0px;
+        background: none;
+        display: none;
+        bottom: 0;
+        animation: none;
+      }
+      .orb-3 {
+        width: 0px; height: 0px;
+        background: none;
+        display: none;
+        bottom: 0;
+        animation: none;
+      }
   }
 
   @media (min-width: 600px) and (max-width: 1000px) {
@@ -467,6 +509,21 @@
         position: relative;
       }
 
+      .main-text {
+        min-width: 500px;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-dim);
+        transition: all 0.5s;
+        cursor: pointer;
+        padding: 10px;
+        border: 1px solid var(--border);
+        background-color: rgba(255, 255, 255, 0.037);
+        border-radius: 8px;
+        margin-bottom: 5px;
+      }
 
       /* .recuerden {
         display: none;
@@ -656,7 +713,7 @@
   <div class="bottom-right">© Shira Labs · Shira Highlight</div>
 </div>
 
-<div class="changeLog"></div>
+<div id="changeLog" class="changeLog"></div>
 
 <script>
   const particlesEl = document.getElementById('particles');
@@ -774,7 +831,7 @@
     changeLog.style.transition = "all 0.5s";
     changeLog.style.display = "block";
     changeLog.style.position = "fixed";
-    changeLog.innerHTML = `<div class="card" style="min-width: 700px;">
+    changeLog.innerHTML = `<div class="card">
       <div class="btn-label card-label" style="font-size: 25px" onclick="changeLog()")>ChangeLog <span class="exit-button" style="float: right"></span></div><br>
         <div class="main-text" onclick="toggleScript(this)"> Versión v0.1.5 (EN DESARROLLO)
           <div class="btn-sub-changelog">
