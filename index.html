@@ -215,8 +215,6 @@
   .btn-label { font-size: 14px; font-weight: 500; color: var(--text-primary); }
   .btn-sub { font-size: 11px; color: var(--text-secondary); margin-top: 1px; }
   .btn-sub-changelog { 
-    color: var(--text-secondary);
-    margin-top: 1px;
     font-weight: normal;
     letter-spacing: normal;
     text-transform: none;
@@ -409,6 +407,10 @@
 
   .card::-webkit-scrollbar {
     display: none;
+  }
+
+  .btn-fire {
+    color: var(--accent-cyan);
   }
 
   @media (max-width: 600px) {
@@ -847,7 +849,7 @@
     changeLog.style.position = "fixed";
     changeLog.innerHTML = `<div class="card">
       <div class="btn-label card-label" style="font-size: 25px" onclick="changeLog()")>ChangeLog <span class="exit-button" style="float: right"></span></div><br>
-        <div class="main-text" onclick="toggleScript(this)"> Versión v0.1.5 (EN DESARROLLO)
+        <div class="main-text" onclick="toggleScript(this)"><span class="btn-fire"> Versión v0.1.5 </span>(EN DESARROLLO)
           <div class="btn-sub-changelog">
             > Corregido problema de tilteo negro en ventana
             <br>> Corregido error de color en botón "📁 Abrir Carpeta"
