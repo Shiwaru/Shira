@@ -409,7 +409,11 @@
   }
 
   .btn-fire {
-    color: var(--accent-cyan);
+    color: var(--accent-fire);
+  }
+  
+  .btn-acid {
+    color: var(--accent-cyan)
   }
 
   @media (max-width: 600px) {
@@ -848,7 +852,7 @@
     changeLog.style.position = "fixed";
     changeLog.innerHTML = `<div class="card">
       <div class="btn-label card-label" style="font-size: 25px" onclick="changeLog()")>ChangeLog <span class="exit-button" style="float: right"></span></div><br>
-        <div class="main-text" onclick="toggleScript(this)"><span class="btn-fire"> Versión v0.1.5 </span>(EN DESARROLLO)
+        <div class="main-text" onclick="toggleScript(this)"><span class="btn-acid"> Versión v0.1.5 </span>(EN DESARROLLO)
           <div class="btn-sub-changelog">
             > Corregido problema de tilteo negro en ventana
             <br>> Corregido error de color en botón "📁 Abrir Carpeta"
