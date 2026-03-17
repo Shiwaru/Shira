@@ -417,7 +417,15 @@
   }
 
   @media (max-width: 600px) {
-      .game-title {
+      
+      .card {
+        overflow-y: scroll;
+        max-height: 500px;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      game-title {
         font-family: 'Syne', sans-serif;
         font-size: clamp(30px, 2vw, 88px);
         font-weight: 800; line-height: 1; letter-spacing: -3px;
