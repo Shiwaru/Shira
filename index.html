@@ -24,6 +24,15 @@
     --accent-cyan: #00d4ff;
     --accent-pink: #e040fb;
     --accent-fire: #ff5500;
+    --accent-acid: #00d4ff;    /* cyan ácido — ya lo tenés */
+    --accent-toxic: #39ff14;   /* verde tóxico neón */
+    --accent-blood: #cc0033;   /* rojo sangre */
+    --accent-ice: #a8d8ff;     /* azul hielo frío */
+    --accent-gold: #ffc947;    /* dorado */
+    --accent-shadow: #6644aa;  /* violeta oscuro, tipo sombra */
+    --accent-void: #1a0033;    /* casi negro violeta */
+    --accent-solar: #ffaa00;   /* naranja solar */
+    --accent-ghost: #c0c8ff;   /* blanco azulado fantasmal */
     --text-primary: #f0f0f8;
     --text-secondary: #8888aa;
     --text-dim: #444466;
@@ -408,13 +417,14 @@
     display: none;
   }
 
-  .btn-fire {
-    color: var(--accent-fire);
-  }
-  
-  .btn-acid {
-    color: var(--accent-cyan)
-  }
+  .btn-ghost { color: var(--accent-ghost); }
+  .btn-gold { color: var(--accent-gold); }
+  .btn-blood { color: var(--accent-blood); }
+  .btn-toxic { color: var(--accent-toxic); }
+  .btn-gold { color: var(--accent-gold); }
+  .btn-fire { color: var(--accent-fire); }
+  .btn-acid { color: var(--accent-cyan); }
+
 
   @media (max-width: 600px) {
       
@@ -664,7 +674,7 @@
     <div class="game-subtitle">Java Edition - HIGHLIGHT</div>
     <div style="display:flex;justify-content:center;">
       <div class="version-pill">
-        Versión<span>v0.1.4</span>
+        Versión<span>v0.1.5</span><p class="btn-ghost">(ALPHA)</p>
       </div>
       <span>&nbsp;</span>
       <div onclick="changeLog()" class="version-pill-clickable">
@@ -862,7 +872,16 @@
     changeLog.style.position = "fixed";
     changeLog.innerHTML = `<div class="card">
       <div class="btn-label card-label" style="font-size: 25px" onclick="changeLog()")>ChangeLog <span class="exit-button" style="float: right"></span></div><br>
-        <div class="main-text" onclick="toggleScript(this)"><span class="btn-acid"> Versión v0.1.5 </span>(EN DESARROLLO)
+        <div class="main-text" onclick="toggleScript(this)"><span class="btn-ghost"> Versión v0.1.6 </span>(EN DESARROLLO)
+          <div class="btn-sub-changelog">
+            <p class="btn-sub-changelog btn-gold">> Registrada aplicación en Microsoft Store con éxito</p>
+            <p class="btn-sub-changelog btn-fire">> Removida intro de Mojang Studios</p>
+            > Removidas animaciones causantes de lag
+            > Removidos orbes que causaban problemas de rendimiento
+            > Arreglados problemas de animaciones bug
+          </div>
+        </div>
+        <div class="main-text" onclick="toggleScript(this)"><span class="btn-acid"> Versión v0.1.5 </span>(VERSIÓN ACTUAL)
           <div class="btn-sub-changelog">
             > Corregido problema de tilteo negro en ventana
             <br>> Corregido error de color en botón "📁 Abrir Carpeta"
@@ -873,11 +892,11 @@
             <br>> Mitigados algunos problemas de suttering/rendimiento
             <br>> Discord Rich Presence fué reparado completamente (DiscordRPC)
             <br>> Arreglados botones de cerrar y minimizar ventana. Maximizar ventana eliminado
-            <p class="btn-sub-changelog btn-fire">> Compatibilidad Forge alcanzada con éxito</p>
+            <p class="btn-sub-changelog btn-gold">> Compatibilidad Forge alcanzada con éxito</p>
             > Resueltos algunos problemas de inconsistencia visuales
           </div>
         </div>
-        <div class="main-text" onclick="toggleScript(this)"> Versión v0.1.4 (VERSIÓN ACTUAL)
+        <div class="main-text collapsable" onclick="toggleScript(this)"> Versión v0.1.4
           <div class="btn-sub-changelog">
             > Corregido problema de instancias presente desde v0.1.1
             <br>> Corregido problema de Caché en Fabric
