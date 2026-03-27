@@ -725,7 +725,7 @@
     </div> -->
   </div>
   
-  <span class="btn-icon btn-text btn-label recuerden" style="align-self: center; justify-self: center;"></span>
+  <span class="btn-icon btn-text btn-label recuerden" style="display: flex; align-items: center; justify-content: center; align-self: center; justify-self: center;"></span>
 
   <div class="external-status-bar">
     <div class="status-bar">
@@ -789,6 +789,7 @@
       menu.style.opacity = 1;
     }
   const item = document.querySelector(".recuerden");
+
   const list = [
     "Recuerden que fumar hace mal",
     "Te gusta mi proyecto? Próximamente tendré Discord!",
@@ -810,7 +811,10 @@
     "A veces solo le hablo a la pared, nunca me contesta",
     "Qué me miras? *se sonroja*",
     "Nya, ichi ni san, Nya arigatoooo",
-    "Llora menos, juega mas"
+    "Llora menos, juega mas",
+    `Juansekill soy tu fan &ensp;<img style="height: 50px; border-radius: 8px;" src="https://cdn.discordapp.com/emojis/1423881579846963250.webp?size=96">`,
+    `Mondongo &ensp;<img style="height: 50px; border-radius: 8px;" src="https://i.pinimg.com/736x/8f/97/5a/8f975a884fc860b6b645e868b3334897.jpg">`,
+    "Te huelo cuando duermes"
   ];
 
   const randomNumber = getRandomArbitrary(0,list.length-1);
