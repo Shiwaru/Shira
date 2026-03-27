@@ -51,6 +51,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
   }
 
   /* AMBIENT */
@@ -702,7 +705,7 @@
       <span class="btn-arrow">→</span>
     </button>
     
-    <button onclick="window.open('https://www.virustotal.com/gui/file/e020d9aee92217a88fdaa6afc39b7dbd98976b955fefceb759eb612403329d7f');" class="shira-btn">
+    <button onclick="window.open('https://www.virustotal.com/gui/file/d9f3b0bb870ef0c52a2ab840a21fb1fb7c9033560c3a1057a4398cb75009ad0e');" class="shira-btn">
       <span class="btn-icon"><i class="fas fa-search"></i></span>
       <div class="btn-text">
         <div class="btn-label">VirusTotal</div>
@@ -874,6 +877,10 @@
       <div class="btn-label card-label" style="font-size: 25px" onclick="changeLog()")>ChangeLog <span class="exit-button" style="float: right"></span></div><br>
         <div class="main-text" onclick="toggleScript(this)"><span class="btn-ghost"> Versión v0.1.6 </span>(EN DESARROLLO)
           <div class="btn-sub-changelog">
+          </div>
+        </div>
+        <div class="main-text" onclick="toggleScript(this)"><span class="btn-acid"> Versión v0.1.51 <span class="btn-blood"> HOTFIX </span> </span>(VERSIÓN ACTUAL)
+          <div class="btn-sub-changelog">
             <p class="btn-sub-changelog btn-gold">> Registrada aplicación en Microsoft Store con éxito</p>
             <p class="btn-sub-changelog btn-fire">> Removida intro de Mojang Studios</p>
             > Removidas animaciones causantes de lag
@@ -881,10 +888,9 @@
             <br>> Arreglados problemas de animaciones bug
             <br>> Solucionado problema de Redists en Microsoft Store
             <br>> Nuevo icono implementado
-            <p class="btn-sub-changelog btn-blood">> Hotfix deployed</p>
         </div>
         </div>
-        <div class="main-text" onclick="toggleScript(this)"><span class="btn-acid"> Versión v0.1.5 </span>(VERSIÓN ACTUAL)
+        <div class="main-text collapsable" onclick="toggleScript(this)"><span> Versión v0.1.5 </span>
           <div class="btn-sub-changelog">
             > Corregido problema de tilteo negro en ventana
             <br>> Corregido error de color en botón "📁 Abrir Carpeta"
