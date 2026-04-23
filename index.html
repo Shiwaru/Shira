@@ -887,7 +887,7 @@
     changeLog.style.position = "fixed";
     changeLog.innerHTML = `<div class="card">
       <div class="btn-label card-label" style="font-size: 25px" onclick="changeLog()")>ChangeLog <span class="exit-button" style="float: right"></span></div><br>
-        <div class="main-text" onclick="toggleScript(this)"><span class="btn-ghost"> Versión v0.1.6 </span>(EN DESARROLLO)
+        <div class="main-text" onclick="toggleScript(this)"><span class="btn-ghost"> Versión v0.1.6</span>(EN DESARROLLO)
           <div class="btn-sub-changelog">
             > Identificado y corregido problema de rendimiento grave
             <br>> GraalVM inutilizado temporalmente
@@ -895,6 +895,13 @@
             <br>> Reparado Fabric para versiones anteriores a 1.18, funcionando hasta 1.14 (primera versión de Fabric)
             <br>> Corregido pequeño problema en el que redescargaba libs + nativos siempre
             <br>> Corregido problema de nativos no extrayéndose
+            <br>> Arreglada creación de primer perfil
+            <br>> Corregido mostrar interfaz sin tener perfil primario
+            <br>> Corregido problema de mensajes "undefined" en consola
+            <br>> Agregadas versiones mas recientes (26.x)
+            <br>> Corregido problema con Java 25 y Java 24
+            <br>> Corregido problema con cargador de perfiles
+            <br>> Corregido problema al crear carpeta base de instancias
           </div>
         </div>
         <div class="main-text" onclick="toggleScript(this)"><span class="btn-acid"> Versión v0.1.51 <span class="btn-blood"> HOTFIX </span> </span>(VERSIÓN ACTUAL)
