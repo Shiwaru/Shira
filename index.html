@@ -411,9 +411,10 @@
 
   .card {
     overflow-y: scroll;
-    max-height: 800px;
+    max-height: 700px;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    margin-bottom: 50px;
   }
 
   .card::-webkit-scrollbar {
@@ -705,24 +706,34 @@
       <span class="btn-arrow">→</span>
     </button>
     
-    <button onclick="window.open('https://www.virustotal.com/gui/file/d9f3b0bb870ef0c52a2ab840a21fb1fb7c9033560c3a1057a4398cb75009ad0e');" class="shira-btn">
+    <!-- <button onclick="window.open('https://www.virustotal.com/gui/file/28ec7bf1f1634909586f1006c1250152b46c308e40427a037166153dbc2f21d9');" class="shira-btn">
       <span class="btn-icon"><i class="fas fa-search"></i></span>
       <div class="btn-text">
         <div class="btn-label">VirusTotal</div>
         <div class="btn-sub">Verifica la integridad de mis archivos</div>
       </div>
       <span class="btn-arrow">→</span>
-    </button>
-    <!-- <div class="btn-row">
-      <button class="shira-btn">
-        <span class="btn-icon">⚙</span>
-        <div class="btn-text"><div class="btn-label">Opciones</div></div>
+    </button> -->
+    
+    <span class="card-label">Verifica la integridad de mis archivos</span>
+    <div class="btn-row">
+      <button onclick="window.open('https://www.virustotal.com/gui/file/28ec7bf1f1634909586f1006c1250152b46c308e40427a037166153dbc2f21d9');" class="shira-btn">
+        <span class="btn-icon"><i class="fas fa-search"></i></span>
+        <div class="btn-text">
+          <div class="btn-label">VirusTotal</div>
+          <div class="btn-sub"></div>
+        </div>
+        <span class="btn-arrow">→</span>
       </button>
-      <button class="shira-btn shira-btn-danger">
-        <span class="btn-icon">✕</span>
-        <div class="btn-text"><div class="btn-label">Salir</div></div>
+      <button onclick="window.open('https://tria.ge/260428-sdy2xsey2l/static1');" class="shira-btn">
+        <span class="btn-icon"><i class="fa-solid fa-gears"></i></span>
+        <div class="btn-text">
+          <div class="btn-label">Triage</div>
+          <div class="btn-sub"></div>
+        </div>
+        <span class="btn-arrow">→</span>
       </button>
-    </div> -->
+    </div>
   </div>
   
   <span class="btn-icon btn-text btn-label recuerden" style="display: flex; align-items: center; justify-content: center; align-self: center; justify-self: center;"></span>
@@ -906,6 +917,8 @@
             <br>> Corregidos algunos errores de congruencia en display de versiones en instancias
             <br>> Limpieza actualizada para borrar instaladores de Fabric y Forge
             <br>> Agregado soporte 1.10 - 1.7.10, corregido problema de extracción de nativos en dichas versiones
+            <br>> Corregidos problemas varios de muestra en perfiles
+            <br>> Anulada posibilidad de crear perfiles ya creados previamente
           </div>
         </div>
         <div class="main-text" onclick="toggleScript(this)"><span class="btn-acid"> Versión v0.1.51 <span class="btn-blood"> HOTFIX </span> </span>(VERSIÓN ACTUAL)
