@@ -254,11 +254,13 @@
 
   .shira-btn-danger {
     border-color: rgba(255,95,87,0.15);
+    transition: border-color .3s, box-shadow .3s, transform .3s;
   }
   .shira-btn-danger:hover {
     border-color: rgba(255,95,87,0.3);
     box-shadow: 0 4px 20px rgba(255,95,87,0.1), -4px 0 0 #ff5f57;
     transform: translateX(4px);
+    transition: border-color .3s, box-shadow .3s, transform .3s;
   }
   .shira-btn-danger::before {
     background: #ff5f57;
@@ -677,10 +679,15 @@
     <div class="game-title">SHIRA LAUNCHER</div>
     <div class="game-subtitle">Java Edition - HIGHLIGHT</div>
     <div style="display:flex;justify-content:center;">
-      <div class="version-pill">
-        Versión<span>v0.1.51</span><p class="btn-ghost">(ALPHA)</p>
+      <div class="version-pill shira-btn-danger">
+        <span>v0.1.51</span><p class="btn-ghost">(ALPHA)</p>
       </div>
       <span>&nbsp;</span>
+      <div class="version-pill btn-gold">
+        Versión Store<span>v0.1.5</span><p class="btn-ghost">(ALPHA)</p>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center;">
       <div onclick="changeLog()" class="version-pill-clickable">
         <span>Ver ChangeLog</span>
       </div>
@@ -748,11 +755,6 @@
       <div class="status-dot"></div>
       <div class="status-text">Sistema de Cuentas · <span>Premium</span> · No Premium </div>
       <div class="status-badge-3">Pendiente</div>
-    </div>
-    <div class="status-bar" style="margin-top: 4px;">
-      <div class="status-dot"></div>
-      <div class="status-text">Optimización Vanilla · <span>ShiraMAX</span></div> <!-- · -->
-      <div class="status-badge-2">Pausado</div>
     </div>
   </div>
 </div>
