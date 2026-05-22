@@ -156,15 +156,28 @@
     color: var(--text-secondary); margin-top: 8px;
   }
 
+  .pill-showcase {
+    display: flex;
+    justify-content: center;
+  }
+
+  .pill-showcase div {
+    display: flex;
+    justify-content: center;
+  }
+
+
   .version-pill {
     display: inline-flex; align-items: center; gap: 8px;
+    flex-direction: row;
     padding: 5px 16px; margin-top: 12px;
     background: rgba(255,255,255,0.04);
     border: 1px solid var(--border);
     border-radius: 20px;
     font-size: 12px; color: var(--text-secondary);
+    max-width: 250px;
   }
-  .version-pill span { color: var(--accent-cyan); font-weight: 600; }
+  .version-pill span { color: var(--accent-cyan); font-weight: 600; flex-direction: row; }
 
   .version-pill-clickable {
     display: inline-flex; align-items: center; gap: 8px;
@@ -434,6 +447,26 @@
 
   @media (max-width: 600px) {
       
+      .menu-buttons {
+        padding-top: 5px;
+        display: flex;
+        /* flex-direction: row; */
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        width: 1000px;
+        /* height: 40px; */
+      }
+      
+      .btn-row {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .status-bar {
+        display: none;
+      }
+
       .card {
         align-items: start;
         justify-content: center;
@@ -443,9 +476,29 @@
         scrollbar-width: none;
       }
 
-      game-title {
+      .pill-showcase {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .version-pill {
+        display: flex; justify-self: center; gap: 8px;
+        width: 65%;
+      }
+      
+      .separation-span {
+        display: none;
+      }
+
+      .shira-badge {
+        font-size: 0.6rem;
+      }
+
+      .game-title {
         font-family: 'Syne', sans-serif;
-        font-size: 5px;
+        font-size: 25px;
         font-weight: 800; line-height: 1; letter-spacing: -3px;
         background: linear-gradient(135deg, #fff 0%, var(--accent-violet) 50%, var(--accent-blue) 100%);
         -webkit-background-clip: text; -webkit-text-fill-color: transparent;
@@ -476,42 +529,17 @@
         border-radius: 8px;
         margin-bottom: 5px;
       }
-
-      .orb {
-        position: absolute; filter: none; opacity: 0; display: none;
-      }
-      .orb-1 {
-        width: 0px; height: 0px;
-        background: none;
-        display: none;
-        bottom: 0;
-        animation: none;
-      }
-      .orb-2 {
-        width: 0px; height: 0px;
-        background: none;
-        display: none;
-        bottom: 0;
-        animation: none;
-      }
-      .orb-3 {
-        width: 0px; height: 0px;
-        background: none;
-        display: none;
-        bottom: 0;
-        animation: none;
-      }
   }
 
   @media (min-width: 600px) and (max-width: 1000px) {
       .menu-buttons {
         display: flex;
-        flex-direction: row;
+        /* flex-direction: row; */
         justify-content: center;
         align-items: center;
         gap: 8px;
         width: 1000px;
-        height: 40px;
+        /* height: 40px; */
       }
 
       .menu-wrap {
@@ -578,12 +606,12 @@
 
       .menu-buttons {
         display: flex;
-        flex-direction: row;
+        /* flex-direction: row; */
         justify-content: center;
         align-items: center;
         gap: 8px;
-        width: 1000px;
-        height: 40px;
+        /* width: 1000px; */
+        /* height: 40px; */
       }
 
       .menu-buttons button {
@@ -678,16 +706,16 @@
     </div>
     <div class="game-title">SHIRA LAUNCHER</div>
     <div class="game-subtitle">Java Edition - HIGHLIGHT</div>
-    <div style="display:flex;justify-content:center;">
+    <div class="pill-showcase">
       <div class="version-pill shira-btn-danger">
         Versión Github<span>v0.1.6</span><p class="btn-ghost">(ALPHA)</p>
       </div>
-      <span>&nbsp;</span>
+      <span class="separation-span">&nbsp;</span>
       <div class="version-pill btn-gold">
         Versión Store<span>v0.1.6</span><p class="btn-ghost">(ALPHA)</p>
       </div>
     </div>
-    <div style="display:flex;justify-content:center;">
+    <div>
       <div onclick="changeLog()" class="version-pill-clickable">
         <span>Ver ChangeLog</span>
       </div>
