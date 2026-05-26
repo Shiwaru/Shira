@@ -177,6 +177,7 @@
     font-size: 12px; color: var(--text-secondary);
     max-width: 250px;
   }
+  
   .version-pill span { color: var(--accent-cyan); font-weight: 600; flex-direction: row; }
 
   .version-pill-clickable {
@@ -928,6 +929,23 @@
     changeLog.style.position = "fixed";
     changeLog.innerHTML = `<div class="card">
       <div class="btn-label card-label" style="font-size: 25px" onclick="changeLog()")>ChangeLog <span class="exit-button" style="float: right"></span></div><br>
+        <div class="main-text" onclick="toggleScript(this)"><span class="btn-ghost"> Versión v0.1.7 </span>(EN DESARROLLO)
+          <div class="btn-sub-changelog">
+            > Identificado y corregido problema de rendimiento grave
+            <br>> GraalVM reincorporado con éxito
+            <br>> Corregido problema de versiones con Forge 1.19 y 1.18
+            <br>> Corregidos problemas varios de nativos en versiones Forge
+            <br>> Arreglada la redimensión de ventana desde los bordes
+            <br>> Resuelto problema visual de renderizado en el viewport
+            <br>> Removido argumento de nick en las instancias
+            <br>> Ahora es posible agregar varias cuentas premium y no premium, seleccionarlas, y usarlas <br> a lo largo de todas las instancias creadas
+            <br>> Resueltos algunos problemas de consistencia visuales
+            <br>> Visuales rehechas en barra de navegación
+            <br>> Visuales rehechas en cada una de las pestañas 
+            <br> <a href="https://shiwaru.github.io/Shira/CifradoDPAPI" class="btn-sub-changelog btn-gold">> Agregado cifrado DPAPI</a>
+            <br>> Agregada la posibilidad de poder abrir Lunar Client desde Shira <br>(Es necesario iniciar sesión en el launcher de Lunar antes, Shira no puede crear sesiones externas ni lo hará nunca)
+          </div>
+        </div>
         <div class="main-text" onclick="toggleScript(this)"><span class="btn-ghost"> Versión v0.1.6 </span>(VERSIÓN ACTUAL)
           <div class="btn-sub-changelog">
             > Identificado y corregido problema de rendimiento grave
