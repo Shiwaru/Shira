@@ -7,15 +7,15 @@
   --accent-cyan: #00d4ff;
   --accent-pink: #e040fb;
   --accent-fire: #ff5500;
-  --accent-acid: #00d4ff;    /* cyan ácido — ya lo tenés */
-  --accent-toxic: #39ff14;   /* verde tóxico neón */
-  --accent-blood: #cc0033;   /* rojo sangre */
-  --accent-ice: #a8d8ff;     /* azul hielo frío */
-  --accent-gold: #ffc947;    /* dorado */
-  --accent-shadow: #6644aa;  /* violeta oscuro, tipo sombra */
-  --accent-void: #1a0033;    /* casi negro violeta */
-  --accent-solar: #ffaa00;   /* naranja solar */
-  --accent-ghost: #c0c8ff;   /* blanco azulado fantasmal */
+  --accent-acid: #00d4ff;
+  --accent-toxic: #39ff14;
+  --accent-blood: #cc0033;
+  --accent-ice: #a8d8ff;
+  --accent-gold: #ffc947;
+  --accent-shadow: #6644aa;
+  --accent-void: #1a0033;
+  --accent-solar: #ffaa00;
+  --accent-ghost: #c0c8ff;
   --text-primary: #f0f0f8;
   --text-secondary: #8888aa;
   --text-dim: #444466;
