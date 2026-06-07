@@ -259,7 +259,7 @@
     changeLog.style.position = "fixed";
     changeLog.innerHTML = `<div class="card">
       <div class="btn-label card-label" style="font-size: 25px" onclick="changeLog()")>ChangeLog <span class="exit-button" style="float: right"></span></div><br>
-        <div class="main-text" onclick="toggleScript(this)"><span class="btn-ghost"> Versión v0.1.7 </span>(EN DESARROLLO)
+        <div class="main-text" onclick="toggleScript(this)"><span class="btn-ghost"> Versión v0.1.7 </span><span class="btn-fire"> (EN DESARROLLO)</span>
           <div class="btn-sub-changelog">
             > Identificado y corregido problema de rendimiento grave
             <br>> GraalVM reincorporado con éxito
@@ -269,17 +269,17 @@
             <br>> Arreglada la redimensión de ventana desde los bordes
             <br>> Resuelto problema visual de renderizado en el viewport
             <br>> Removido argumento de nick en las instancias
-            <br>> Ahora es posible agregar varias cuentas premium y no premium, seleccionarlas, y usarlas <br> a lo largo de todas las instancias creadas
+            <br>> Creado sistema de cuentas
+            <br>> Agregado Login Premium
             <br>> Resueltos algunos problemas de consistencia visuales
             <br>> Visuales rehechas en barra de navegación
             <br>> Visuales rehechas en cada una de las pestañas 
-            <br> <a href="https://shiwaru.github.io/Shira/CifradoDPAPI" class="btn-sub-changelog btn-gold">> Agregado cifrado DPAPI</a>
-            <br>> Agregada la posibilidad de poder abrir Lunar Client desde Shira <br>(Es necesario iniciar sesión en el launcher de Lunar antes, <br>
-            Shira no puede leer o crear sesiones externas ni lo hará nunca) <br>
-            Respetamos la voluntad de Lunar Client de tener su propio framework y código cerrado - No se podrá usar No Premium tampoco
+            <br><a href="https://shiwaru.github.io/Shira/CifradoDPAPI" class="btn-sub-changelog btn-gold">> Agregado cifrado DPAPI</a>
+            <br>> Agregada la posibilidad de poder abrir Lunar Client desde Shira <br>(Es necesario iniciar sesión en el launcher de Lunar antes
+            <br>> Arreglado error al guardar valor de RAM usado
           </div>
         </div>
-        <div class="main-text" onclick="toggleScript(this)"><span class="btn-ghost"> Versión v0.1.6 </span>(VERSIÓN ACTUAL)
+        <div class="main-text collapsable" onclick="toggleScript(this)"><span class="btn-acid"> Versión v0.1.6 </span>(VERSIÓN ACTUAL)
           <div class="btn-sub-changelog">
             > Identificado y corregido problema de rendimiento grave
             <br>> GraalVM inutilizado temporalmente
@@ -302,7 +302,7 @@
             <br>> Anulada posibilidad de crear perfiles ya creados previamente
           </div>
         </div>
-        <div class="main-text" onclick="toggleScript(this)"><span class="btn-acid"> Versión v0.1.51 <span class="btn-blood"> HOTFIX </span></span>
+        <div class="main-text collapsable" onclick="toggleScript(this)"><span> Versión v0.1.51 <span> HOTFIX </span></span>
           <div class="btn-sub-changelog">
             <p class="btn-sub-changelog btn-gold">> Registrada aplicación en Microsoft Store con éxito</p>
             <p class="btn-sub-changelog btn-fire">> Removida intro de Mojang Studios</p>
