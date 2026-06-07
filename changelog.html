@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shira Launcher — Minecraft Java</title>
+  <meta name="description" content="Shira Highlight es un launcher de Minecraft premium/no premium con soporte para Vanilla, Fabric y con uso de GraalVM.">
+  <meta name="keywords" content="Shira Launcher, Shira Highlight, Shira Nightly, Minecraft Launcher, launcher offline, Fabric, GraalVM, Minecraft Java, Java Launcher, Vanilla, Java, Minecraft, Shira, Shiwaru, Shaiiwaru">
+  <meta name="author" content="Shiwaru">
+
+  <meta property="og:title" content="Shira Launcher">
+  <meta property="og:description" content="Launcher de Minecraft offline con soporte Fabric y GraalVM">
+  <meta property="og:image" content="URL de tu logo o screenshot">
+  <meta property="og:url" content="https://shiwaru.github.io/shira">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://shiwaru.github.io/Shira/assets/index.css">
+</head>
+<body>
+
+<div class="ambient">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+</div>
+<div class="grid-bg"></div>
+<div id="particles"></div>
+
+<div class="menu-wrap" style="opacity: 0;">
+
+<div id="changeLog" class="changeLog">
+  <div class="card">
+      <div class="btn-label card-label" style="font-size: 25px" onclick="changeLog()")>ChangeLog <span class="exit-button" style="float: right"></span></div><br>
+        <div class="main-text" onclick="toggleScript(this)"><span class="btn-ghost"> Versión v0.1.7 </span>(EN DESARROLLO)
+          <div class="btn-sub-changelog">
+            > Identificado y corregido problema de rendimiento grave
+            <br>> GraalVM reincorporado con éxito
+            <br>> Corregido problema de versiones con Forge 1.19 y 1.18
+            <br>> Corregidos problemas varios de nativos en versiones Forge
+            <br>> Ahora se identifica si Forge fue instalado y evita reinstalarlo desde cero
+            <br>> Arreglada la redimensión de ventana desde los bordes
+            <br>> Resuelto problema visual de renderizado en el viewport
+            <br>> Removido argumento de nick en las instancias
+            <br>> Ahora es posible agregar varias cuentas premium y no premium, seleccionarlas, y usarlas <br> a lo largo de todas las instancias creadas
+            <br>> Resueltos algunos problemas de consistencia visuales
+            <br>> Visuales rehechas en barra de navegación
+            <br>> Visuales rehechas en cada una de las pestañas 
+            <br> <a href="https://shiwaru.github.io/Shira/CifradoDPAPI" class="btn-sub-changelog btn-gold">> Agregado cifrado DPAPI</a>
+            <br>> Agregada la posibilidad de poder abrir Lunar Client desde Shira <br>(Es necesario iniciar sesión en el launcher de Lunar antes, <br>
+            Shira no puede leer o crear sesiones externas ni lo hará nunca) <br>
+            Respetamos la voluntad de Lunar Client de tener su propio framework y código cerrado - No se podrá usar No Premium tampoco
+          </div>
+        </div>
+        <div class="main-text" onclick="toggleScript(this)"><span class="btn-ghost"> Versión v0.1.6 </span>(VERSIÓN ACTUAL)
+          <div class="btn-sub-changelog">
+            > Identificado y corregido problema de rendimiento grave
+            <br>> GraalVM inutilizado temporalmente
+            <br>> Corregido problema de incompatibilidad con versiones anteriores a 1.19
+            <br>> Reparado Fabric para versiones anteriores a 1.18, funcionando hasta 1.14 (primera versión de Fabric)
+            <br>> Corregido pequeño problema en el que redescargaba libs + nativos siempre
+            <br>> Corregido problema de nativos no extrayéndose
+            <br>> Arreglada creación de primer perfil
+            <br>> Corregido problema de mensajes "undefined" en consola
+            <br>> Corregido mostrar interfaz sin tener perfil primario
+            <br>> Agregadas versiones mas recientes (26.x)
+            <br>> Corregido problema con Java 25 y Java 24
+            <br>> Corregido problema con cargador de perfiles
+            <br>> Corregido problema al crear carpeta base de instancias
+            <br>> Arreglado DiscordRPC para mejor funcionalidad
+            <br>> Corregidos algunos errores de congruencia en display de versiones en instancias
+            <br>> Limpieza actualizada para borrar instaladores de Fabric y Forge
+            <br>> Agregado soporte 1.10 - 1.7.10, corregido problema de extracción de nativos en dichas versiones
+            <br>> Corregidos problemas varios de muestra en perfiles
+            <br>> Anulada posibilidad de crear perfiles ya creados previamente
+          </div>
+        </div>
+        <div class="main-text" onclick="toggleScript(this)"><span class="btn-acid"> Versión v0.1.51 <span class="btn-blood"> HOTFIX </span></span>
+          <div class="btn-sub-changelog">
+            <p class="btn-sub-changelog btn-gold">> Registrada aplicación en Microsoft Store con éxito</p>
+            <p class="btn-sub-changelog btn-fire">> Removida intro de Mojang Studios</p>
+            > Removidas animaciones causantes de lag
+            <br>> Removidos orbes que causaban problemas de rendimiento
+            <br>> Arreglados problemas de animaciones bug
+            <br>> Solucionado problema de Redists en Microsoft Store
+            <br>> Nuevo icono implementado
+        </div>
+        </div>
+        <div class="main-text collapsable" onclick="toggleScript(this)"><span> Versión v0.1.5 </span>
+          <div class="btn-sub-changelog">
+            > Corregido problema de tilteo negro en ventana
+            <br>> Corregido error de color en botón "📁 Abrir Carpeta"
+            <br>> Migrado de compilador MSVC a CMake
+            <br>> Agregada opción para usar GraalVM
+            <br>> Arreglado problema de tamaños en opciones
+            <br>> Arreglado problema de tamaño en sidebar/instancias
+            <br>> Mitigados algunos problemas de suttering/rendimiento
+            <br>> Discord Rich Presence fué reparado completamente (DiscordRPC)
+            <br>> Arreglados botones de cerrar y minimizar ventana. Maximizar ventana eliminado
+            <p class="btn-sub-changelog btn-gold">> Compatibilidad Forge alcanzada con éxito</p>
+            > Resueltos algunos problemas de inconsistencia visuales
+          </div>
+        </div>
+        <div class="main-text collapsable" onclick="toggleScript(this)"> Versión v0.1.4
+          <div class="btn-sub-changelog">
+            > Corregido problema de instancias presente desde v0.1.1
+            <br>> Corregido problema de Caché en Fabric
+            <br>> Creado Setup para Shira Launcher
+            <br>> Agregada Intro de Mojang Studios al inicio
+            <br>> Recreada toda la interfaz desde cero
+            <br>> Migrado de Qt Designer a WebView Embed
+          </div>
+        </div>
+        <div class="main-text collapsable" onclick="toggleScript(this)"> Versión v0.1.3
+          <div class="btn-sub-changelog">
+            > Corregido bug en cargador de perfiles
+            <br>> Corregido problema de recarga de perfiles
+            <br>> Corregidos problemas de la instancia default
+          </div>
+        </div>
+        <div class="main-text collapsable" onclick="toggleScript(this)"> Versión v0.1.2
+          <div class="btn-sub-changelog">
+            > Añadida función - Descarga de Java Dinámico según versión de Minecraft
+            <br>> Agregados argumentos JVM personalizados (Removido)
+            <br>> Reescrita descarga por multi-hilo
+            <br>> Arreglada descarga de assets rotos
+          </div>
+        </div>
+        <div class="main-text collapsable" onclick="toggleScript(this)"> Versión v0.1.1
+          <div class="btn-sub-changelog">
+            > Agregada Interfaz Qt
+            <br>> Agregada lista de versiones
+            <br>> Agregado sistema de instancias
+            <br>> Agregado creador de instancias
+            <br>> Agregada instancia por defecto
+            <br>> Agregado selector de RAM
+            <br>> Agregado chequeo de versiones instaladas (Removido)
+            <br>> Agregado nick personalizado
+            <br>> Agregado guardado de nick usado
+            <br>> Agregada barra de carga
+            <br>> Agregada compatibilidad con versiones anteriores de Minecraft (-1.17)
+            <br>> Agregada descarga por multi-hilo
+          </div>
+        </div>
+        <div class="main-text collapsable" onclick="toggleScript(this)"> Versión v0.1.0
+          <div class="btn-sub-changelog">
+            > Primer lanzamiento de Shira Launcher
+          </div>
+        </div>
+      </div>
+   </div>
+</div>
+
+<script>
+  const particlesEl = document.getElementById('particles');
+  const colors = ['#9b4dca','#3d8ef0','#00d4ff','#e040fb'];
+  for (let i = 0; i < 25; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 4 + 2;
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    p.style.cssText = `
+      width:${size}px;height:${size}px;
+      background:${color};
+      left:${Math.random()*100}%;
+      --d:${Math.random()*8+6}s;
+      --delay:${Math.random()*8}s;
+      --drift:${(Math.random()-0.5)*80}px;
+      --op:${Math.random()*0.4+0.1};
+    `;
+    particlesEl.appendChild(p);
+  }
+</script>
+
+<script>
+    let triggerLog = 0;
+
+    menu = document.querySelector(".menu-wrap");
+    menu.style.transition = "all 0.5s";
+
+    setTimeout(intro, 300)
+
+    function intro() {
+      menu.style.opacity = 1;
+    }
+  const item = document.querySelector(".recuerden");
+
+  const list = [
+    "Recuerden que fumar hace mal",
+    "Te gusta mi proyecto? Próximamente tendré Discord!",
+    "Muchas cosas buenas nos esperan, solo hay que hallarlas en el camino",
+    "Y si te digo que soy un espía del FBI?",
+    "*se ríe como desquiciado mental*",
+    `Conoces a <a href="https://juansekill.com">Juansekill</a>?`,
+    `Haz escuchado de <a href="https://optijuegos.net/">OptiJuegos</a>?`,
+    "ShiraMAX será la cúspide de toda optimización (Algún día)",
+    "Te gusta Minecraft Java? A mi también",
+    "Java >>> Bodriock",
+    "gg ez bro",
+    "No te dejes engañar, TLauncher es peor de lo que parece",
+    "Bro realmente piensa que puede jugar con su lavarropas",
+    "la tostadora no es para jugar",
+    "a casa, pal lobby",
+    "Estoy buscando tener el mejor launcher - Tendré suerte? - Será suficiente solamente motivación?",
+    "Como llegué aquí?",
+    "Díganle a Shiwaru que me saque de su sótano - quiero comer de una vez",
+    "Díganle a Juansekill que se quedó sin su galleta",
+    "Me gusta descargar Minecraft, y Java, y Forge, y Fabric, y Forge, y NeoForge, y Mods, y...",
+    "A veces solo le hablo a la pared, nunca me contesta",
+    "Qué me miras? *se sonroja*",
+    "Nya, ichi ni san, Nya arigatoooo",
+    "Llora menos, juega mas",
+    "bro respeta",
+    `Juansekill soy tu fan &ensp;<img style="height: 50px; border-radius: 8px;" src="https://cdn.discordapp.com/emojis/1423881579846963250.webp?size=96">`,
+    `Mondongo &ensp;<img style="height: 50px; border-radius: 8px;" src="https://i.pinimg.com/736x/8f/97/5a/8f975a884fc860b6b645e868b3334897.jpg">`,
+    "Te huelo cuando duermes",
+    "Scratch, Unity, Roblox Studio, Project Zomboid, The Binding of Isaac, Minecraft y el desarrollo web, todos juntos inspiraron este proyecto",
+    "Amigo, recuerda que soy uno solo, y no cobro por usar el bodrio de mi programa",
+    `Si encuentras errores, por favor hazme saber: <a href="https://discord.gg/p8wqSsuzkx"></a>`
+  ];
+
+  const randomNumber = getRandomArbitrary(0,list.length-1);
+  const finalNumber = Math.round(randomNumber);
+
+  item.innerHTML = list[finalNumber];
+
+  function getRandomArbitrary(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+  
+  function changeLog() {
+    
+    window.location.href = https://shiwaru.github.io/Shira/changelog;
+    
+    let menuOverlay = document.querySelector(".menu-wrap");
+    let changeLog = document.querySelector(".changeLog");
+
+    if (triggerLog == 0) {
+      triggerLog = 1
+    } else if (triggerLog == 1){
+      triggerLog = 0;
+    }
+    
+    menuOverlay.style.transition = "all 0.5s";
+    changeLog.style.transition = "all 0.5s";
+
+    if (triggerLog == 0) {
+      
+      changeLog.style.opacity = 0;
+      changeLog.style.transition = "transform 0.2s, opacity 0.3s";
+      menuOverlay.style.transition = "all 0s";
+      changeLog.style.opacity = 0;
+      setTimeout(switchMenu, 500);
+
+    } else {
+      changeLog.style.opacity = 0;
+      changeLog.style.transform = 'scale(1)';
+      menuOverlay.style.transition = "all 0.5s";
+      menuOverlay.style.opacity = 0;
+      setTimeout(switchMenu, 600);
+    }
+
+
+  }
+
+  function switchMenu() {
+    
+    let changeLog = document.querySelector(".changeLog");
+    let menuOverlay = document.querySelector(".menu-wrap");
+
+    if (triggerLog == 0) {
+      changeLog.style.opacity = 0;
+      menuOverlay.style.transition = "all 0.5s";
+      menuOverlay.style.display = "flex";
+      setTimeout(() => {
+        changeLog.style.display = "none";
+        menuOverlay.style.opacity = 1;
+      }, 100);
+    } else {
+    
+    menuOverlay.style.display = "none";
+    changeLog.style.transition = "all 0.5s";
+    changeLog.style.display = "block";
+    changeLog.style.position = "fixed";
+    changeLog.innerHTML = `<div class="card">
+      <div class="btn-label card-label" style="font-size: 25px" onclick="changeLog()")>ChangeLog <span class="exit-button" style="float: right"></span></div><br>
+        <div class="main-text" onclick="toggleScript(this)"><span class="btn-ghost"> Versión v0.1.7 </span>(EN DESARROLLO)
+          <div class="btn-sub-changelog">
+            > Identificado y corregido problema de rendimiento grave
+            <br>> GraalVM reincorporado con éxito
+            <br>> Corregido problema de versiones con Forge 1.19 y 1.18
+            <br>> Corregidos problemas varios de nativos en versiones Forge
+            <br>> Ahora se identifica si Forge fue instalado y evita reinstalarlo desde cero
+            <br>> Arreglada la redimensión de ventana desde los bordes
+            <br>> Resuelto problema visual de renderizado en el viewport
+            <br>> Removido argumento de nick en las instancias
+            <br>> Ahora es posible agregar varias cuentas premium y no premium, seleccionarlas, y usarlas <br> a lo largo de todas las instancias creadas
+            <br>> Resueltos algunos problemas de consistencia visuales
+            <br>> Visuales rehechas en barra de navegación
+            <br>> Visuales rehechas en cada una de las pestañas 
+            <br> <a href="https://shiwaru.github.io/Shira/CifradoDPAPI" class="btn-sub-changelog btn-gold">> Agregado cifrado DPAPI</a>
+            <br>> Agregada la posibilidad de poder abrir Lunar Client desde Shira <br>(Es necesario iniciar sesión en el launcher de Lunar antes, <br>
+            Shira no puede leer o crear sesiones externas ni lo hará nunca) <br>
+            Respetamos la voluntad de Lunar Client de tener su propio framework y código cerrado - No se podrá usar No Premium tampoco
+          </div>
+        </div>
+        <div class="main-text" onclick="toggleScript(this)"><span class="btn-ghost"> Versión v0.1.6 </span>(VERSIÓN ACTUAL)
+          <div class="btn-sub-changelog">
+            > Identificado y corregido problema de rendimiento grave
+            <br>> GraalVM inutilizado temporalmente
+            <br>> Corregido problema de incompatibilidad con versiones anteriores a 1.19
+            <br>> Reparado Fabric para versiones anteriores a 1.18, funcionando hasta 1.14 (primera versión de Fabric)
+            <br>> Corregido pequeño problema en el que redescargaba libs + nativos siempre
+            <br>> Corregido problema de nativos no extrayéndose
+            <br>> Arreglada creación de primer perfil
+            <br>> Corregido problema de mensajes "undefined" en consola
+            <br>> Corregido mostrar interfaz sin tener perfil primario
+            <br>> Agregadas versiones mas recientes (26.x)
+            <br>> Corregido problema con Java 25 y Java 24
+            <br>> Corregido problema con cargador de perfiles
+            <br>> Corregido problema al crear carpeta base de instancias
+            <br>> Arreglado DiscordRPC para mejor funcionalidad
+            <br>> Corregidos algunos errores de congruencia en display de versiones en instancias
+            <br>> Limpieza actualizada para borrar instaladores de Fabric y Forge
+            <br>> Agregado soporte 1.10 - 1.7.10, corregido problema de extracción de nativos en dichas versiones
+            <br>> Corregidos problemas varios de muestra en perfiles
+            <br>> Anulada posibilidad de crear perfiles ya creados previamente
+          </div>
+        </div>
+        <div class="main-text" onclick="toggleScript(this)"><span class="btn-acid"> Versión v0.1.51 <span class="btn-blood"> HOTFIX </span></span>
+          <div class="btn-sub-changelog">
+            <p class="btn-sub-changelog btn-gold">> Registrada aplicación en Microsoft Store con éxito</p>
+            <p class="btn-sub-changelog btn-fire">> Removida intro de Mojang Studios</p>
+            > Removidas animaciones causantes de lag
+            <br>> Removidos orbes que causaban problemas de rendimiento
+            <br>> Arreglados problemas de animaciones bug
+            <br>> Solucionado problema de Redists en Microsoft Store
+            <br>> Nuevo icono implementado
+        </div>
+        </div>
+        <div class="main-text collapsable" onclick="toggleScript(this)"><span> Versión v0.1.5 </span>
+          <div class="btn-sub-changelog">
+            > Corregido problema de tilteo negro en ventana
+            <br>> Corregido error de color en botón "📁 Abrir Carpeta"
+            <br>> Migrado de compilador MSVC a CMake
+            <br>> Agregada opción para usar GraalVM
+            <br>> Arreglado problema de tamaños en opciones
+            <br>> Arreglado problema de tamaño en sidebar/instancias
+            <br>> Mitigados algunos problemas de suttering/rendimiento
+            <br>> Discord Rich Presence fué reparado completamente (DiscordRPC)
+            <br>> Arreglados botones de cerrar y minimizar ventana. Maximizar ventana eliminado
+            <p class="btn-sub-changelog btn-gold">> Compatibilidad Forge alcanzada con éxito</p>
+            > Resueltos algunos problemas de inconsistencia visuales
+          </div>
+        </div>
+        <div class="main-text collapsable" onclick="toggleScript(this)"> Versión v0.1.4
+          <div class="btn-sub-changelog">
+            > Corregido problema de instancias presente desde v0.1.1
+            <br>> Corregido problema de Caché en Fabric
+            <br>> Creado Setup para Shira Launcher
+            <br>> Agregada Intro de Mojang Studios al inicio
+            <br>> Recreada toda la interfaz desde cero
+            <br>> Migrado de Qt Designer a WebView Embed
+          </div>
+        </div>
+        <div class="main-text collapsable" onclick="toggleScript(this)"> Versión v0.1.3
+          <div class="btn-sub-changelog">
+            > Corregido bug en cargador de perfiles
+            <br>> Corregido problema de recarga de perfiles
+            <br>> Corregidos problemas de la instancia default
+          </div>
+        </div>
+        <div class="main-text collapsable" onclick="toggleScript(this)"> Versión v0.1.2
+          <div class="btn-sub-changelog">
+            > Añadida función - Descarga de Java Dinámico según versión de Minecraft
+            <br>> Agregados argumentos JVM personalizados (Removido)
+            <br>> Reescrita descarga por multi-hilo
+            <br>> Arreglada descarga de assets rotos
+          </div>
+        </div>
+        <div class="main-text collapsable" onclick="toggleScript(this)"> Versión v0.1.1
+          <div class="btn-sub-changelog">
+            > Agregada Interfaz Qt
+            <br>> Agregada lista de versiones
+            <br>> Agregado sistema de instancias
+            <br>> Agregado creador de instancias
+            <br>> Agregada instancia por defecto
+            <br>> Agregado selector de RAM
+            <br>> Agregado chequeo de versiones instaladas (Removido)
+            <br>> Agregado nick personalizado
+            <br>> Agregado guardado de nick usado
+            <br>> Agregada barra de carga
+            <br>> Agregada compatibilidad con versiones anteriores de Minecraft (-1.17)
+            <br>> Agregada descarga por multi-hilo
+          </div>
+        </div>
+        <div class="main-text collapsable" onclick="toggleScript(this)"> Versión v0.1.0
+          <div class="btn-sub-changelog">
+            > Primer lanzamiento de Shira Launcher
+          </div>
+        </div>
+      </div>`;
+      
+    setTimeout(() => {
+      changeLog.style.transition = "all 0.5s";
+      changeLog.style.opacity = 1;
+    }, 100);
+    }
+  }
+
+  function toggleScript(object) {
+    object.classList.toggle("collapsable");
+    console.log(object)
+
+  }
+
+</script>
+
+</body>
+</html>
