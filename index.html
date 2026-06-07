@@ -126,7 +126,126 @@
   <div class="bottom-right">© Shira Labs · Shira Highlight</div>
 </div>
 
-<div id="changeLog" class="changeLog"></div>
+<div id="changeLog" class="changeLog">
+  <div class="card">
+      <div class="btn-label card-label" style="font-size: 25px" onclick="changeLog()")>ChangeLog <span class="exit-button" style="float: right"></span></div><br>
+        <div class="main-text" onclick="toggleScript(this)"><span class="btn-ghost"> Versión v0.1.7 </span>(EN DESARROLLO)
+          <div class="btn-sub-changelog">
+            > Identificado y corregido problema de rendimiento grave
+            <br>> GraalVM reincorporado con éxito
+            <br>> Corregido problema de versiones con Forge 1.19 y 1.18
+            <br>> Corregidos problemas varios de nativos en versiones Forge
+            <br>> Ahora se identifica si Forge fue instalado y evita reinstalarlo desde cero
+            <br>> Arreglada la redimensión de ventana desde los bordes
+            <br>> Resuelto problema visual de renderizado en el viewport
+            <br>> Removido argumento de nick en las instancias
+            <br>> Ahora es posible agregar varias cuentas premium y no premium, seleccionarlas, y usarlas <br> a lo largo de todas las instancias creadas
+            <br>> Resueltos algunos problemas de consistencia visuales
+            <br>> Visuales rehechas en barra de navegación
+            <br>> Visuales rehechas en cada una de las pestañas 
+            <br> <a href="https://shiwaru.github.io/Shira/CifradoDPAPI" class="btn-sub-changelog btn-gold">> Agregado cifrado DPAPI</a>
+            <br>> Agregada la posibilidad de poder abrir Lunar Client desde Shira <br>(Es necesario iniciar sesión en el launcher de Lunar antes, <br>
+            Shira no puede leer o crear sesiones externas ni lo hará nunca) <br>
+            Respetamos la voluntad de Lunar Client de tener su propio framework y código cerrado - No se podrá usar No Premium tampoco
+          </div>
+        </div>
+        <div class="main-text" onclick="toggleScript(this)"><span class="btn-ghost"> Versión v0.1.6 </span>(VERSIÓN ACTUAL)
+          <div class="btn-sub-changelog">
+            > Identificado y corregido problema de rendimiento grave
+            <br>> GraalVM inutilizado temporalmente
+            <br>> Corregido problema de incompatibilidad con versiones anteriores a 1.19
+            <br>> Reparado Fabric para versiones anteriores a 1.18, funcionando hasta 1.14 (primera versión de Fabric)
+            <br>> Corregido pequeño problema en el que redescargaba libs + nativos siempre
+            <br>> Corregido problema de nativos no extrayéndose
+            <br>> Arreglada creación de primer perfil
+            <br>> Corregido problema de mensajes "undefined" en consola
+            <br>> Corregido mostrar interfaz sin tener perfil primario
+            <br>> Agregadas versiones mas recientes (26.x)
+            <br>> Corregido problema con Java 25 y Java 24
+            <br>> Corregido problema con cargador de perfiles
+            <br>> Corregido problema al crear carpeta base de instancias
+            <br>> Arreglado DiscordRPC para mejor funcionalidad
+            <br>> Corregidos algunos errores de congruencia en display de versiones en instancias
+            <br>> Limpieza actualizada para borrar instaladores de Fabric y Forge
+            <br>> Agregado soporte 1.10 - 1.7.10, corregido problema de extracción de nativos en dichas versiones
+            <br>> Corregidos problemas varios de muestra en perfiles
+            <br>> Anulada posibilidad de crear perfiles ya creados previamente
+          </div>
+        </div>
+        <div class="main-text" onclick="toggleScript(this)"><span class="btn-acid"> Versión v0.1.51 <span class="btn-blood"> HOTFIX </span></span>
+          <div class="btn-sub-changelog">
+            <p class="btn-sub-changelog btn-gold">> Registrada aplicación en Microsoft Store con éxito</p>
+            <p class="btn-sub-changelog btn-fire">> Removida intro de Mojang Studios</p>
+            > Removidas animaciones causantes de lag
+            <br>> Removidos orbes que causaban problemas de rendimiento
+            <br>> Arreglados problemas de animaciones bug
+            <br>> Solucionado problema de Redists en Microsoft Store
+            <br>> Nuevo icono implementado
+        </div>
+        </div>
+        <div class="main-text collapsable" onclick="toggleScript(this)"><span> Versión v0.1.5 </span>
+          <div class="btn-sub-changelog">
+            > Corregido problema de tilteo negro en ventana
+            <br>> Corregido error de color en botón "📁 Abrir Carpeta"
+            <br>> Migrado de compilador MSVC a CMake
+            <br>> Agregada opción para usar GraalVM
+            <br>> Arreglado problema de tamaños en opciones
+            <br>> Arreglado problema de tamaño en sidebar/instancias
+            <br>> Mitigados algunos problemas de suttering/rendimiento
+            <br>> Discord Rich Presence fué reparado completamente (DiscordRPC)
+            <br>> Arreglados botones de cerrar y minimizar ventana. Maximizar ventana eliminado
+            <p class="btn-sub-changelog btn-gold">> Compatibilidad Forge alcanzada con éxito</p>
+            > Resueltos algunos problemas de inconsistencia visuales
+          </div>
+        </div>
+        <div class="main-text collapsable" onclick="toggleScript(this)"> Versión v0.1.4
+          <div class="btn-sub-changelog">
+            > Corregido problema de instancias presente desde v0.1.1
+            <br>> Corregido problema de Caché en Fabric
+            <br>> Creado Setup para Shira Launcher
+            <br>> Agregada Intro de Mojang Studios al inicio
+            <br>> Recreada toda la interfaz desde cero
+            <br>> Migrado de Qt Designer a WebView Embed
+          </div>
+        </div>
+        <div class="main-text collapsable" onclick="toggleScript(this)"> Versión v0.1.3
+          <div class="btn-sub-changelog">
+            > Corregido bug en cargador de perfiles
+            <br>> Corregido problema de recarga de perfiles
+            <br>> Corregidos problemas de la instancia default
+          </div>
+        </div>
+        <div class="main-text collapsable" onclick="toggleScript(this)"> Versión v0.1.2
+          <div class="btn-sub-changelog">
+            > Añadida función - Descarga de Java Dinámico según versión de Minecraft
+            <br>> Agregados argumentos JVM personalizados (Removido)
+            <br>> Reescrita descarga por multi-hilo
+            <br>> Arreglada descarga de assets rotos
+          </div>
+        </div>
+        <div class="main-text collapsable" onclick="toggleScript(this)"> Versión v0.1.1
+          <div class="btn-sub-changelog">
+            > Agregada Interfaz Qt
+            <br>> Agregada lista de versiones
+            <br>> Agregado sistema de instancias
+            <br>> Agregado creador de instancias
+            <br>> Agregada instancia por defecto
+            <br>> Agregado selector de RAM
+            <br>> Agregado chequeo de versiones instaladas (Removido)
+            <br>> Agregado nick personalizado
+            <br>> Agregado guardado de nick usado
+            <br>> Agregada barra de carga
+            <br>> Agregada compatibilidad con versiones anteriores de Minecraft (-1.17)
+            <br>> Agregada descarga por multi-hilo
+          </div>
+        </div>
+        <div class="main-text collapsable" onclick="toggleScript(this)"> Versión v0.1.0
+          <div class="btn-sub-changelog">
+            > Primer lanzamiento de Shira Launcher
+          </div>
+        </div>
+      </div>
+</div>
 
 <script>
   const particlesEl = document.getElementById('particles');
@@ -206,6 +325,8 @@
   }
   
   function changeLog() {
+    
+    window.location.href = https://shiwaru.github.io/Shira/changelog;
     
     let menuOverlay = document.querySelector(".menu-wrap");
     let changeLog = document.querySelector(".changeLog");
