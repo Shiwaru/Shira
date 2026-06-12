@@ -280,6 +280,7 @@ body {
   border: 1px solid var(--border);
   border-radius: 10px;
   min-width: 340px;
+  margin-top: 10px;
 }
 
 .status-dot {
@@ -553,6 +554,7 @@ body {
       border: 1px solid var(--border);
       border-radius: 10px;
       min-width: 340px;
+      margin-top: 10px;
     }
       
     .game-title {

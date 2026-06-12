@@ -31,11 +31,11 @@
 
 <div id="changeLog" class="changeLog">
   <div class="card">
-      <div class="btn-label card-label" style="font-size: 25px" onclick="changeLog()")>ChangeLog <span class="exit-button" style="float: right"></span></div><br>
+      <div class="btn-label card-label" style="font-size: 25px" onclick="changeLog()">ChangeLog <span class="exit-button" style="float: right"></span></div><br>
         <div class="main-text" onclick="toggleScript(this)"><span class="btn-ghost"> Versión v0.1.7 </span>(EN DESARROLLO)
           <div class="btn-sub-changelog">
             > Identificado y corregido problema de rendimiento grave
-            <br>> GraalVM reincorporado con éxito
+            > GraalVM reincorporado con éxito
             <br>> Corregido problema de versiones con Forge 1.19 y 1.18
             <br>> Corregidos problemas varios de nativos en versiones Forge
             <br>> Ahora se identifica si Forge fue instalado y evita reinstalarlo desde cero
@@ -46,10 +46,12 @@
             <br>> Resueltos algunos problemas de consistencia visuales
             <br>> Visuales rehechas en barra de navegación
             <br>> Visuales rehechas en cada una de las pestañas 
-            <br> <a href="https://shiwaru.github.io/Shira/CifradoDPAPI" class="btn-sub-changelog btn-gold">> Agregado cifrado DPAPI</a>
-            <br>> Agregada la posibilidad de poder abrir Lunar Client desde Shira <br>(Es necesario iniciar sesión en el launcher de Lunar antes, <br>
-            Shira no puede leer o crear sesiones externas ni lo hará nunca) <br>
-            Respetamos la voluntad de Lunar Client de tener su propio framework y código cerrado - No se podrá usar No Premium tampoco
+            <br>> <a href="https://shiwaru.github.io/Shira/CifradoDPAPI" class="btn-sub-changelog btn-gold">Agregado cifrado DPAPI</a>
+            <br>> Agregada la posibilidad de poder abrir Lunar Client desde Shira <br>(Es necesario iniciar sesión en el launcher de Lunar antes)
+            <br>> Resuelto grave problema de cálculo en escalado por DPI en bordes de la ventana del launcher
+            <br>> Agregado cambio de nick no premium
+            <br>> Agregado remover cuentas premium y nicks no premium
+            <br>> Refrescado el overlay del launcher
           </div>
         </div>
         <div class="main-text collapsable" onclick="toggleScript(this)"><span class="btn-ghost"> Versión v0.1.6 </span>(VERSIÓN ACTUAL)
@@ -108,7 +110,7 @@
             <br>> Creado Setup para Shira Launcher
             <br>> Agregada Intro de Mojang Studios al inicio
             <br>> Recreada toda la interfaz desde cero
-            <br>> Migrado de Qt Designer a WebView Embed
+            <br>> Migrado de QtDesigner a QtWebEngine
           </div>
         </div>
         <div class="main-text collapsable" onclick="toggleScript(this)"> Versión v0.1.3
@@ -149,6 +151,14 @@
         </div>
       </div>
    </div>
+</div>
+
+<div class="bottom-bar">
+  <div class="bottom-left">
+    <div class="bottom-logo">S</div>
+    <div class="bottom-name"><span>Shira</span> Launcher</div>
+  </div>
+  <div class="bottom-right">© Shira Labs · Shira Highlight</div>
 </div>
 
 <script>
