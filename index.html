@@ -53,59 +53,61 @@
     </div>
   </div>
 
-  <div class="menu-buttons">
-    <button onclick="window.open('https://github.com/Shiwaru/Shira-Highlight/releases/download/v0.1.72/Shira.Highlight.0.1.72.zip');" class="shira-btn">
+  <div class="menu-buttons" style="display: flex; justify-self: center; align-self: center">
+    <button onclick="openLink('Github')" class="shira-btn">
       <span class="btn-icon"><i class="fas fa-arrow-alt-circle-down"></i></span>
       <div class="btn-text">
-        <div class="btn-label">Descargar</div>
-        <div class="btn-sub">Shira Launcher</div>
+        <div class="btn-label">Github</div>
+        <div class="btn-sub">Descarga directa</div>
       </div>
       <span class="btn-arrow">→</span>
     </button>
-
-    <button onclick="window.open('https://github.com/Shiwaru/Shira-Highlight/releases');" class="shira-btn">
+    
+    <button onclick="openLink('Store')" class="shira-btn">
+      <span class="btn-icon"><i class="fa-solid fa-bag-shopping"></i></span>
+      <div class="btn-text">
+        <div class="btn-label">Store</div>
+        <div class="btn-sub">Descarga desde Microsoft Store</div>
+      </div>
+      <span class="btn-arrow">→</span>
+    </button>
+    
+    <button onclick="openLink('Repo')" class="shira-btn">
       <span class="btn-icon"><i class="fab fa-github"></i></span>
       <div class="btn-text">
         <div class="btn-label">GitHub</div>
-        <div class="btn-sub">Visita mi github</div>
+        <div class="btn-sub">Visita el repositorio</div>
       </div>
       <span class="btn-arrow">→</span>
     </button>
-
-    <!-- <button onclick="window.open('https://www.virustotal.com/gui/file/28ec7bf1f1634909586f1006c1250152b46c308e40427a037166153dbc2f21d9');" class="shira-btn">
-      <span class="btn-icon"><i class="fas fa-search"></i></span>
-      <div class="btn-text">
-        <div class="btn-label">VirusTotal</div>
-        <div class="btn-sub">Verifica la integridad de mis archivos</div>
-      </div>
-      <span class="btn-arrow">→</span>
-    </button> -->
     
-    <span class="card-label">Verifica la integridad de mis archivos</span>
+    
+    <span class="card-label">Verifica la integridad de los archivos</span>
     <div class="btn-row">
-      <button class="shira-btn v-total">
+      <button onclick="openLink('VirusTotal')" class="shira-btn">
         <span class="btn-icon"><i class="fas fa-search"></i></span>
         <div class="btn-text">
           <div class="btn-label">VirusTotal</div>
           <div class="btn-sub"></div>
         </div>
-        <span class="btn-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-arrow-badge-right"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M7 6l-.112 .006a1 1 0 0 0 -.669 1.619l3.501 4.375l-3.5 4.375a1 1 0 0 0 .78 1.625h6a1 1 0 0 0 .78 -.375l4 -5a1 1 0 0 0 0 -1.25l-4 -5a1 1 0 0 0 -.78 -.375h-6z" /></svg></span>
+        <span class="btn-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-arrow-badge-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M7 6l-.112 .006a1 1 0 0 0 -.669 1.619l3.501 4.375l-3.5 4.375a1 1 0 0 0 .78 1.625h6a1 1 0 0 0 .78 -.375l4 -5a1 1 0 0 0 0 -1.25l-4 -5a1 1 0 0 0 -.78 -.375h-6z"></path></svg></span>
       </button>
-      <button class="shira-btn triage">
+      
+      <button onclick="openLink('Triage')" class="shira-btn">
         <span class="btn-icon"><i class="fa-solid fa-gears"></i></span>
         <div class="btn-text">
           <div class="btn-label">Triage</div>
           <div class="btn-sub"></div>
         </div>
-        <span class="btn-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-arrow-badge-right"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M7 6l-.112 .006a1 1 0 0 0 -.669 1.619l3.501 4.375l-3.5 4.375a1 1 0 0 0 .78 1.625h6a1 1 0 0 0 .78 -.375l4 -5a1 1 0 0 0 0 -1.25l-4 -5a1 1 0 0 0 -.78 -.375h-6z" /></svg></span>
+        <span class="btn-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-arrow-badge-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M7 6l-.112 .006a1 1 0 0 0 -.669 1.619l3.501 4.375l-3.5 4.375a1 1 0 0 0 .78 1.625h6a1 1 0 0 0 .78 -.375l4 -5a1 1 0 0 0 0 -1.25l-4 -5a1 1 0 0 0 -.78 -.375h-6z"></path></svg></span>
       </button>
-      <button class="shira-btn virscan">
+      <button onclick="openLink('VirScan')" class="shira-btn">
         <span class="btn-icon"><i class="fa-solid fa-gears"></i></span>
         <div class="btn-text">
           <div class="btn-label">VirScan</div>
           <div class="btn-sub"></div>
         </div>
-        <span class="btn-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-arrow-badge-right"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M7 6l-.112 .006a1 1 0 0 0 -.669 1.619l3.501 4.375l-3.5 4.375a1 1 0 0 0 .78 1.625h6a1 1 0 0 0 .78 -.375l4 -5a1 1 0 0 0 0 -1.25l-4 -5a1 1 0 0 0 -.78 -.375h-6z" /></svg></span>
+        <span class="btn-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-arrow-badge-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M7 6l-.112 .006a1 1 0 0 0 -.669 1.619l3.501 4.375l-3.5 4.375a1 1 0 0 0 .78 1.625h6a1 1 0 0 0 .78 -.375l4 -5a1 1 0 0 0 0 -1.25l-4 -5a1 1 0 0 0 -.78 -.375h-6z"></path></svg></span>
       </button>
     </div>
   </div>
