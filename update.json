@@ -1,4 +1,4 @@
 {
-  "LatestVersion": "0.1.8",
+  "LatestVersion": "v0.1.8",
   "Changelog": "Agregado: soporte para NeoForge 26.x\nArreglado: crash al cambiar de skin\nMejorado: tiempo de carga del launcher"
 }
