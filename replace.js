@@ -1,8 +1,8 @@
 function openLink(linkType) {
 
-    if (linkType == "Github") window.open('https://github.com/Shiwaru/Shira-Highlight/releases/download/v0.1.72/Shira.Highlight.0.1.72.zip');
+    if (linkType == "Github") window.open('https://github.com/Shiwaru/Shira-Krypton/releases/download/v0.1.8/Shira.Krypton.v0.1.8.zip');
     if (linkType == "Store") window.open('ms-windows-store://pdp/?ProductId=9NQDQX221GN6', '_self');
-    if (linkType == "Repo") window.open('https://github.com/Shiwaru/Shira-Highlight/releases');
+    if (linkType == "Repo") window.open('https://github.com/Shiwaru/Shira-Krypton/releases');
 
     if (linkType == "VirusTotal") window.open('https://www.virustotal.com/gui/file/092f665fb5f5b24b0e9dcd28ebf5e2851fc916b5fcafc0e80c2b4ce6b7086da0?nocache=1');
     if (linkType == "Triage") window.open('https://tria.ge/260817-pbtsmsar2z/static1');
