@@ -32,15 +32,32 @@
 <div id="changeLog" class="changeLog">
   <div class="card">
       <div class="btn-label card-label" style="font-size: 25px" onclick="changeLog()">ChangeLog <span class="exit-button" style="float: right"></span></div><br>
-        <div class="main-text" onclick="toggleScript(this)"><span class="btn-ghost"> Versión v0.1.8 </span>(EN DESARROLLO)
+        <div class="main-text" onclick="toggleScript(this)"><span class="btn-ghost"> Versión v0.1.9 </span>(EN DESARROLLO)
           <div class="btn-sub-changelog dev">
-            > OptiFine ahora es jugable si has descargado versiones y no está disponible su servidor
-            <br>> Agregado Tab de Mods (BETA)
-            <br>> Arreglado error de Forge al lanzar versiones mayores a 1.21.11 donde detectaba instalación legacy -1.13
+            > Trabajando...
           </div>
         </div>
-        <div class="main-text" onclick="toggleScript(this)"><span class="btn-gold"> Versión v0.1.72 </span>(VERSIÓN ACTUAL)
+        <div class="main-text" onclick="toggleScript(this)"><span class="btn-gold"> Versión v0.1.8 </span>(VERSIÓN ACTUAL)
           <div class="btn-sub-changelog release">
+            > Agregado "cancelar" para cancelar el lanzamiento en proceso
+            <br>> Agregado bloqueo por instancias
+            <br>> Agregada detección de Minecraft corriendo de fondo - Ya no mas "habrá lanzado el juego?"
+            <br>> Agregada traducción al inglés completa (Interfaz completa solamente, mensajes en consola no)
+            <br>> Arreglado launch de instancias - Crasheaba el launcher al iniciar dos veces un mismo juego que ya estaba corriendo
+            <br>> Arreglado el ancho de las barras de scroll en todo el launcher
+            <br>> Arreglado problema de duplicado de perfiles de mismo nombre
+            <br>> Arreglado problema de creación de perfiles en la pantalla inicial
+            <br>> Arreglado scrollbar para sidebar de instancias (No existía el poder deslizar hacia abajo en el sidebar de las instancias)
+            <br>> Arreglado bug en la barra de progreso principal
+            <br>> Arreglado error bloqueante de Forge en versiones superiores a 26.0 al detectar Forge Legacy
+            <br>> Rework al sistema de descargas general
+            <br>> Rework al sistema de hilos de descarga (después de 3 siglos de no tocarlo)
+            <br>> Rework al sistema de notificaciones, ahora cada notificación en la interfaz se muestra como notificación única
+            <br>> Agregado desync instalación Forge/Fabric/NeoForge + descarga Java/GraalVM en paralelo para mayor velocidad de lanzamiento
+          </div>
+        </div>
+        <div class="main-text collapsable" onclick="toggleScript(this)"><span> Versión v0.1.72 </span>(VERSIÓN ACTUAL)
+          <div class="btn-sub-changelog">
             > Arreglado problema que devolvía la interfaz a la primera instancia al cambiar de modloader en cualquier otra instancia
             <br>> Arreglado problema de Fabric al cambiar entre versiones
             <br>> Arreglado problema que no permitía abrir las carpetas del juego mientras se lanzaba
