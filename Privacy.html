@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de Privacidad – ShiraBot</title>
+<style>
+  :root { --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --line:#d1d9e0; --accent:#5865f2; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#16181d; --fg:#e6e8eb; --muted:#9aa3ad; --line:#2d323a; --accent:#8c96ff; }
+  }
+  html { background:var(--bg); }
+  body { margin:0 auto; max-width:760px; padding:32px 20px 64px; background:var(--bg); color:var(--fg);
+         font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  h1 { font-size:1.9rem; margin:0 0 4px; }
+  h2 { font-size:1.2rem; margin:2rem 0 .4rem; padding-top:1rem; border-top:1px solid var(--line); }
+  p, li { margin:.4rem 0; }
+  .meta, .lang { color:var(--muted); font-size:.92rem; }
+  a { color:var(--accent); }
+  hr.big { border:0; border-top:3px solid var(--line); margin:3rem 0 2rem; }
+</style>
+</head>
+<body>
+
+<p class="lang"><a href="#en">English version ↓</a></p>
+
+<h1>Política de Privacidad de ShiraBot</h1>
+<p class="meta">Última actualización: 9 de noviembre de 2026</p>
+
+<p>Esta política explica qué datos trata ShiraBot (“el bot”), un bot de Discord de soporte mediante tickets y de un canal contador, y qué se hace con ellos. Al usar el bot en un servidor de Discord aceptas lo descrito aquí.</p>
+
+<h2>1. Qué datos trata el bot</h2>
+<p><strong>Al abrir un ticket:</strong></p>
+<ul>
+  <li>Tu ID de usuario de Discord y tu nombre de usuario (el canal del ticket se nombra con tu nombre de usuario).</li>
+  <li>El programa o categoría que elegiste.</li>
+  <li>Lo que escribas en el formulario: el problema (hasta 100 caracteres) y la descripción (hasta 1000 caracteres). También lo que escribas o subas después dentro del canal del ticket, que ve el staff.</li>
+</ul>
+<p><strong>En el canal contador:</strong> el bot lee el contenido de los mensajes de ese canal para comprobar el número escrito. Los mensajes fuera de secuencia se eliminan automáticamente. El bot guarda únicamente el último número alcanzado, sin ningún dato de usuario asociado.</p>
+<p><strong>Comandos:</strong> el bot recibe el contenido de los mensajes de los canales a los que tiene acceso (intent <em>Message Content</em> de Discord) para detectar sus comandos (<code>!tickets</code>, <code>!setup-general</code>, <code>!cerrar</code>, <code>!borrar</code>, <code>!initcounter</code>) y el canal contador. Los mensajes que no son comandos ni pertenecen al canal contador se ignoran: no se guardan ni se registran.</p>
+<p><strong>Registros técnicos:</strong> el bot escribe en consola registros de errores y de conexión. No incluyen el contenido de tus mensajes, pero pueden contener identificadores técnicos de Discord (por ejemplo, IDs de canal o de usuario).</p>
+<p>El bot <strong>no</strong> trata datos de presencia, ni de voz, ni correos, ni ubicación, ni datos de pago.</p>
+
+<h2>2. Para qué se usan</h2>
+<ul>
+  <li>Crear, gestionar y cerrar tickets de soporte, y que el staff pueda atenderte.</li>
+  <li>Hacer funcionar y moderar el canal contador.</li>
+  <li>Detectar y corregir fallos del bot.</li>
+</ul>
+<p>No se usan para publicidad, perfilado, análisis de comportamiento ni entrenamiento de modelos de IA.</p>
+
+<h2>3. Dónde se guardan y por cuánto tiempo</h2>
+<ul>
+  <li><strong>No hay base de datos propia.</strong> Los tickets y el contador viven dentro de Discord (en canales y mensajes del servidor).</li>
+  <li><strong>Tickets:</strong> se conservan en el servidor hasta que el staff elimina el canal. Cerrar un ticket revoca tu acceso al canal, pero el staff conserva el contenido hasta borrarlo.</li>
+  <li><strong>Contador:</strong> el número se conserva mientras exista el mensaje donde se guarda.</li>
+  <li><strong>Memoria del bot:</strong> Discord entrega al bot algunos datos que este mantiene temporalmente en memoria (mensajes recientes, usuarios y miembros). Se limpian periódicamente, en general en menos de una hora, y desaparecen al reiniciarse el bot.</li>
+  <li><strong>Registros de consola:</strong> los conserva el servicio de alojamiento según sus propias reglas y no se usan con otro fin.</li>
+</ul>
+
+<h2>4. Con quién se comparten</h2>
+<p>No vendemos ni cedemos tus datos. Solo intervienen:</p>
+<ul>
+  <li><strong>Discord Inc.</strong>, que aloja los mensajes y canales y se rige por su propia <a href="https://discord.com/privacy">Política de Privacidad</a>.</li>
+  <li><strong>El proveedor de alojamiento del bot</strong> (Discloud), donde se ejecuta el código y se generan los registros de consola.</li>
+  <li><strong>El staff del servidor</strong>, que puede ver el contenido de los tickets que abres.</li>
+</ul>
+
+<h2>5. Tus derechos</h2>
+<p>Puedes pedir en cualquier momento acceso, corrección o eliminación de los datos de tus tickets escribiendo al contacto indicado abajo o al staff del servidor. Si el servidor o Discord retienen copias bajo sus propias políticas, esas se rigen por ellas.</p>
+
+<h2>6. Menores</h2>
+<p>El bot está dirigido a usuarios que cumplan la edad mínima exigida por Discord en su país. No se recopilan datos de menores de forma deliberada.</p>
+
+<h2>7. Seguridad</h2>
+<p>Aplicamos medidas razonables para proteger el bot y sus credenciales. Ningún sistema es infalible. Evita escribir contraseñas, datos bancarios o información sensible dentro de un ticket.</p>
+
+<h2>8. Cambios</h2>
+<p>Esta política puede actualizarse. La fecha de arriba indica la última revisión. Seguir usando el bot tras un cambio implica aceptarlo.</p>
+
+<h2>9. Contacto</h2>
+<p>Dudas o solicitudes sobre tus datos: <strong>[CORREO_DE_CONTACTO]</strong></p>
+
+<hr class="big">
+
+<div id="en" lang="en">
+<h1>ShiraBot Privacy Policy</h1>
+<p class="meta">Last updated: November 9, 2026 · <a href="#top" onclick="window.scrollTo(0,0);return false;">↑ Versión en español</a></p>
+
+<p>This policy explains what data ShiraBot (“the bot”), a Discord bot for ticket-based support and a counting channel, processes and what is done with it. By using the bot in a Discord server you agree to what is described here.</p>
+
+<h2>1. Data the bot processes</h2>
+<p><strong>When you open a ticket:</strong></p>
+<ul>
+  <li>Your Discord user ID and username (the ticket channel is named after your username).</li>
+  <li>The program or category you picked.</li>
+  <li>What you write in the form: the problem (up to 100 characters) and the description (up to 1000 characters), plus anything you write or upload later inside the ticket channel, which staff can see.</li>
+</ul>
+<p><strong>In the counting channel:</strong> the bot reads the content of messages in that channel to check the number written. Out-of-sequence messages are deleted automatically. The bot stores only the last number reached, with no user data attached.</p>
+<p><strong>Commands:</strong> the bot receives message content from the channels it can access (Discord’s <em>Message Content</em> intent) to detect its commands (<code>!tickets</code>, <code>!setup-general</code>, <code>!cerrar</code>, <code>!borrar</code>, <code>!initcounter</code>) and the counting channel. Messages that are neither commands nor in the counting channel are ignored: they are not stored or logged.</p>
+<p><strong>Technical logs:</strong> the bot writes error and connection logs to the console. They do not include your message content, but may contain technical Discord identifiers (for example channel or user IDs).</p>
+<p>The bot does <strong>not</strong> process presence data, voice data, email addresses, location or payment information.</p>
+
+<h2>2. What it is used for</h2>
+<ul>
+  <li>Creating, managing and closing support tickets so staff can help you.</li>
+  <li>Running and moderating the counting channel.</li>
+  <li>Detecting and fixing bot errors.</li>
+</ul>
+<p>It is not used for advertising, profiling, behavior analytics or AI model training.</p>
+
+<h2>3. Where it is stored and for how long</h2>
+<ul>
+  <li><strong>There is no database of our own.</strong> Tickets and the counter live inside Discord (in server channels and messages).</li>
+  <li><strong>Tickets:</strong> kept in the server until staff delete the channel. Closing a ticket revokes your access to it, but staff keep the content until it is deleted.</li>
+  <li><strong>Counter:</strong> the number is kept as long as the message storing it exists.</li>
+  <li><strong>Bot memory:</strong> some data delivered by Discord is held temporarily in memory (recent messages, users and members). It is cleared periodically, generally in under an hour, and disappears when the bot restarts.</li>
+  <li><strong>Console logs:</strong> retained by the hosting provider under its own rules and not used for any other purpose.</li>
+</ul>
+
+<h2>4. Who it is shared with</h2>
+<p>We do not sell or transfer your data. Only the following are involved:</p>
+<ul>
+  <li><strong>Discord Inc.</strong>, which hosts messages and channels and is governed by its own <a href="https://discord.com/privacy">Privacy Policy</a>.</li>
+  <li><strong>The bot’s hosting provider</strong> (Discloud), where the code runs and console logs are generated.</li>
+  <li><strong>The server staff</strong>, who can see the content of the tickets you open.</li>
+</ul>
+
+<h2>5. Your rights</h2>
+<p>You may request access, correction or deletion of your ticket data at any time by writing to the contact below or to the server staff. Copies retained by the server or by Discord under their own policies are governed by those policies.</p>
+
+<h2>6. Minors</h2>
+<p>The bot is intended for users who meet Discord’s minimum age in their country. Data from minors is not knowingly collected.</p>
+
+<h2>7. Security</h2>
+<p>We apply reasonable measures to protect the bot and its credentials. No system is infallible. Avoid writing passwords, banking details or sensitive information in a ticket.</p>
+
+<h2>8. Changes</h2>
+<p>This policy may be updated. The date above shows the latest revision. Continuing to use the bot after a change means you accept it.</p>
+
+<h2>9. Contact</h2>
+<p>Questions or requests about your data: <strong>[CORREO_DE_CONTACTO]</strong></p>
+</div>
+
+</body>
+</html>
